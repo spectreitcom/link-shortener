@@ -5,7 +5,7 @@ export default function AppLayout({ children }: PropsWithChildren) {
   return (
     <div className={"h-screen"}>
       <Navbar />
-      {children}
+      <div className={"container mx-auto mt-8"}>{children}</div>
     </div>
   );
 }
