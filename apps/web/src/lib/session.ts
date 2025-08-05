@@ -1,7 +1,6 @@
 import { cookies } from "next/headers";
 import { jwtVerify, SignJWT } from "jose";
 import { SECRET_KEY } from "@/lib/constants";
-import { redirect } from "next/navigation";
 
 export type Session = {
   id: string;
