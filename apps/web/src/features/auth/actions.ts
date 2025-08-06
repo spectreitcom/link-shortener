@@ -18,13 +18,17 @@ export async function createUser(payload: CreateUserSchema) {
 
   if (!validationRes.success) return { error: true };
 
-  await fetch(`${BACKEND_URL}/users`, {
+  const { cPassword, ...rest } = validationRes.data;
+
+  const response = await fetch(`${BACKEND_URL}/users`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(validationRes.data),
+    body: JSON.stringify(rest),
   });
+
+  if (response.status >= 400) return { error: true };
 
   redirect("/auth/sign-in");
 }
