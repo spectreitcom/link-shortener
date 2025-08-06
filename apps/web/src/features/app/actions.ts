@@ -6,7 +6,7 @@ import {
 } from "@/features/app/schemas";
 import { z } from "zod";
 import { BACKEND_URL } from "@/lib/constants";
-import { redirect } from "next/navigation";
+import { redirect, permanentRedirect } from "next/navigation";
 import { getSession } from "@/lib/session";
 
 type CreateShortenUrlResponse = {
@@ -36,4 +36,23 @@ export async function createShortenUrl(payload: CreateShortenUrlSchema) {
   const data = (await response.json()) as CreateShortenUrlResponse;
 
   return { error: false, code: data.code };
+}
+
+export type GetOriginalUrlResponse = {
+  url: string;
+};
+
+export async function getOriginalUrl(code: string) {
+  const response = await fetch(`${BACKEND_URL}/urls/${code}`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+
+  if (!response.ok) return { error: true };
+
+  const data = (await response.json()) as GetOriginalUrlResponse;
+
+  permanentRedirect(data.url);
 }
