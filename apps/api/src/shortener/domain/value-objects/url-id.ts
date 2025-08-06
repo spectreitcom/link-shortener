@@ -1,11 +1,11 @@
 import { randomUUID } from 'crypto';
 import { IsUUID, validateSync } from 'class-validator';
 
-export class UserId {
-  @IsUUID(4, { message: 'UserId must be a valid UUID v4' })
+export class UrlId {
+  @IsUUID(4, { message: 'UrlId must be a valid UUID v4' })
   public readonly value: string;
 
-  constructor(value: string) {
+  private constructor(value: string) {
     this.value = value;
     this.validateSync();
   }
@@ -13,15 +13,19 @@ export class UserId {
   private validateSync(): void {
     const errors = validateSync(this);
     if (errors.length) {
-      throw new Error('Invalid UserId');
+      throw new Error('Invalid UrlId');
     }
   }
 
-  static create(): UserId {
-    return new UserId(randomUUID());
+  static fromString(value: string): UrlId {
+    return new UrlId(value);
   }
 
-  equals(other: UserId): boolean {
+  static create(): UrlId {
+    return new UrlId(randomUUID());
+  }
+
+  equals(other: UrlId): boolean {
     return this.value === other.value;
   }
 }

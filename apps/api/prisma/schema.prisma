@@ -22,3 +22,14 @@ model User {
 }
 
 // ------------------------------
+
+// Shortener domain
+
+model Url {
+  id          String @id @default(uuid())
+  originalUrl String
+  code        String @unique
+  ownerId     String
+}
+
+// ------------------------------

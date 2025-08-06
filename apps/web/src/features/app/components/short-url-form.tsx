@@ -15,8 +15,14 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { createShortenUrl } from "@/features/app/actions";
+import { toast } from "sonner";
+import { useState } from "react";
+import { GeneratedUrlPreview } from "@/features/app/components/generated-url-preview";
 
 export function ShortUrlForm() {
+  const [url, setUrl] = useState("");
+
   const form = useForm<CreateShortenUrlSchema>({
     defaultValues: {
       url: "",
@@ -24,10 +30,30 @@ export function ShortUrlForm() {
     resolver: zodResolver(createShortenUrlSchema),
   });
 
-  const submit = async (data: CreateShortenUrlSchema) => {};
+  const submit = async (data: CreateShortenUrlSchema) => {
+    const response = await createShortenUrl(data);
+    if (response.error) {
+      toast.error("Invalid url");
+      return;
+    }
+
+    toast.success("Url created successfully");
+
+    setUrl(`http://localhost:3000/${response.code}`);
+
+    form.reset();
+  };
 
   return (
     <Form {...form}>
+      <div className={"flex justify-center"}>
+        {url && (
+          <div className={"w-5xl mb-4"}>
+            <GeneratedUrlPreview url={url} />
+          </div>
+        )}
+      </div>
+
       <form
         onSubmit={form.handleSubmit(submit)}
         className={"flex items-start justify-between gap-4 w-5xl mx-auto"}
@@ -45,7 +71,7 @@ export function ShortUrlForm() {
           control={form.control}
         />
 
-        <Button type={"submit"} disabled={form.formState.isSubmitting}>
+        <Button type={"submit"} loading={form.formState.isSubmitting}>
           Create
         </Button>
       </form>

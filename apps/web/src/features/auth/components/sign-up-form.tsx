@@ -88,7 +88,7 @@ export function SignUpForm() {
           control={form.control}
         />
 
-        <Button type={"submit"} disabled={form.formState.isSubmitting}>
+        <Button type={"submit"} loading={form.formState.isSubmitting}>
           Create an account
         </Button>
       </form>

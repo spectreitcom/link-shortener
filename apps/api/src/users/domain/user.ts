@@ -3,8 +3,8 @@ import { UserId } from './value-objects/user-id';
 export class User {
   constructor(
     private readonly id: UserId,
-    private readonly email: string,
-    private readonly password: string,
+    private email: string,
+    private password: string,
   ) {}
 
   static create(email: string, password: string) {
