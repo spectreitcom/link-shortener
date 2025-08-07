@@ -27,7 +27,7 @@ export class CreateUrlCommandHandler
     await this.urlRepository.save(url);
 
     // cache the url
-    await this.urlCacheService.cache(url.getCode().value, url.getOriginalUrl());
+    await this.urlCacheService.cache(url);
 
     return {
       code: url.getCode().value,

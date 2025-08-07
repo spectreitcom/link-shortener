@@ -1,18 +1,19 @@
+import { Url } from '../../domain/url';
+
 export abstract class UrlCacheService {
   /**
-   * Caches a given resource identified by its code and original URL.
+   * Caches the data from the specified URL for optimized reuse in future operations.
    *
-   * @param {string} code - The code representing the resource to be cached.
-   * @param {string} originalUrl - The original URL of the resource to be cached.
-   * @return {Promise<void>} A promise that resolves when the caching process is completed.
+   * @param {Url} url - The URL of the resource that needs to be cached.
+   * @return {Promise<void>} A promise that resolves when the caching operation is complete.
    */
-  abstract cache(code: string, originalUrl: string): Promise<void>;
+  abstract cache(url: Url): Promise<void>;
 
   /**
-   * Retrieves an entity or value based on the provided unique code.
+   * Retrieves a URL entity based on the provided unique code.
    *
-   * @param {string} code - The unique identifier used to retrieve the corresponding entity or value.
-   * @return {Promise<string | null>} A promise that resolves to a string if the entity or value is found, or null if no match is found.
+   * @param {string} code - The unique identifier code used to retrieve the associated URL.
+   * @return {Promise<Url | null>} A promise that resolves to the URL entity if found, or null if no match is found.
    */
-  abstract getByCode(code: string): Promise<string | null>;
+  abstract getByCode(code: string): Promise<Url | null>;
 }

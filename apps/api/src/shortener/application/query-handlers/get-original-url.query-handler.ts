@@ -29,7 +29,16 @@ export class GetOriginalUrlQueryHandler
     const { code, ip } = query;
 
     const cachedUrl = await this.urlCacheService.getByCode(code);
-    if (cachedUrl) return { url: cachedUrl };
+    if (cachedUrl) {
+      this.eventBus.publish<UrlReadEvent>(
+        new UrlReadEvent(
+          cachedUrl.getId().value,
+          cachedUrl.getOwnerId().value,
+          ip,
+        ),
+      );
+      return { url: cachedUrl.getOriginalUrl() };
+    }
 
     const url = await this.urlRepository.findByCode(Code.fromString(code));
     if (!url) throw new UrlNotFound();
