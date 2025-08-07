@@ -16,6 +16,9 @@ export class PrismaUserUrlViewRepository implements UserUrlViewRepository {
       where: { ownerId: userId },
       take,
       skip,
+      orderBy: {
+        createdAt: 'desc',
+      },
     });
 
     return urls.map(
