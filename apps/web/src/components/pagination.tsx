@@ -59,42 +59,35 @@ function calculatePages(
   totalPages: number,
   currentPage: number,
 ): (string | number)[] {
-  // If total pages is small, show all pages
   if (totalPages <= 7) {
     return Array.from({ length: totalPages }, (_, i) => i + 1);
   }
 
   const result: (string | number)[] = [];
-  
-  // Always show first page
+
   result.push(1);
-  
-  // Determine the range around current page
-  const delta = 2; // Show 2 pages before and after current page
+
+  const delta = 2;
   const rangeStart = Math.max(2, currentPage - delta);
   const rangeEnd = Math.min(totalPages - 1, currentPage + delta);
-  
-  // Add ellipsis after first page if needed
+
   if (rangeStart > 2) {
     result.push("ellipsis");
   }
-  
-  // Add pages around current page
+
   for (let i = rangeStart; i <= rangeEnd; i++) {
-    if (i !== 1 && i !== totalPages) { // Don't duplicate first/last page
+    if (i !== 1 && i !== totalPages) {
       result.push(i);
     }
   }
-  
-  // Add ellipsis before last page if needed
+
   if (rangeEnd < totalPages - 1) {
     result.push("ellipsis");
   }
-  
-  // Always show last page (if more than 1 page total)
+
   if (totalPages > 1) {
     result.push(totalPages);
   }
-  
+
   return result;
 }
