@@ -7,6 +7,7 @@ import {
   Param,
   Post,
   Query,
+  Req,
 } from '@nestjs/common';
 import { ShortenerService } from '../../shortener/application/shortener.service';
 import { CreateShortUrlDto } from './dtos/create-short-url.dto';
@@ -15,6 +16,7 @@ import { ValidatedUser } from '../authentication/types';
 import { Public } from '../authentication/decorators/public.decorator';
 import { UrlNotFound } from '../../shortener/application/query-handlers/get-original-url.query-handler';
 import { GetUserUrlsParamsDto } from './dtos/get-user-urls-params.dto';
+import { Request } from 'express';
 
 @Controller('urls')
 export class UrlApiController {
@@ -38,9 +40,9 @@ export class UrlApiController {
 
   @Public()
   @Get(':code')
-  getOriginalUrl(@Param('code') code: string) {
+  getOriginalUrl(@Param('code') code: string, @Req() request: Request) {
     try {
-      return this.shortenerService.getOriginalUrl(code);
+      return this.shortenerService.getOriginalUrl(code, request?.ip ?? '');
     } catch (e) {
       if (e instanceof UrlNotFound) {
         throw new NotFoundException(e.message);

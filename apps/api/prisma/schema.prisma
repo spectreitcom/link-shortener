@@ -38,9 +38,14 @@ model Url {
 // Analytics domain
 
 model AnalyticsUrl {
-  id         String @id @default(uuid())
-  urlId      String @unique
-  visitCount Int    @default(0)
+  id               String @id @default(uuid())
+  urlId            String @unique
+  visitCount       Int    @default(0)
+  uniqueVisitCount Int    @default(0)
+  ownerId          String
+
+  @@index([ownerId])
+  @@index([urlId])
 }
 
 model Vist {
@@ -48,6 +53,11 @@ model Vist {
   urlId     String
   ip        String
   createdAt DateTime @default(now())
+  ownerId   String
+
+  @@index([ownerId])
+  @@index([urlId])
+  @@index([createdAt])
 }
 
 // ------------------------------

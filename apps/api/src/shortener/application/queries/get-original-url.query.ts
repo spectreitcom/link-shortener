@@ -1,5 +1,8 @@
 import { IQuery } from '@nestjs/cqrs';
 
 export class GetOriginalUrlQuery implements IQuery {
-  constructor(public readonly code: string) {}
+  constructor(
+    public readonly code: string,
+    public readonly ip: string,
+  ) {}
 }

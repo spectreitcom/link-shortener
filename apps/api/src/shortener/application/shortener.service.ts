@@ -27,16 +27,20 @@ export class ShortenerService {
   }
 
   /**
-   * Retrieves the original URL corresponding to the provided shortened code.
+   * Retrieves the original URL associated with the given shortened URL code.
    *
-   * @param {string} code - The shortened code associated with the original URL.
-   * @return {Promise<GetOriginalUrlQueryResponse>} A promise that resolves to the response containing the original URL.
+   * @param {string} code - The shortened URL code for which the original URL is being requested.
+   * @param {string} ip - The IP address of the client making the request.
+   * @return {Promise<GetOriginalUrlQueryResponse>} A promise that resolves to the original URL data.
    */
-  async getOriginalUrl(code: string): Promise<GetOriginalUrlQueryResponse> {
+  async getOriginalUrl(
+    code: string,
+    ip: string,
+  ): Promise<GetOriginalUrlQueryResponse> {
     return await this.queryBus.execute<
       GetOriginalUrlQuery,
       GetOriginalUrlQueryResponse
-    >(new GetOriginalUrlQuery(code));
+    >(new GetOriginalUrlQuery(code, ip));
   }
 
   /**
