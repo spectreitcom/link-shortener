@@ -26,10 +26,28 @@ model User {
 // Shortener domain
 
 model Url {
-  id          String @id @default(uuid())
+  id          String   @id @default(uuid())
   originalUrl String
-  code        String @unique
+  code        String   @unique
   ownerId     String
+  createdAt   DateTime @default(now())
+}
+
+// ------------------------------
+
+// Analytics domain
+
+model AnalyticsUrl {
+  id         String @id @default(uuid())
+  urlId      String @unique
+  visitCount Int    @default(0)
+}
+
+model Vist {
+  id        String   @id @default(uuid())
+  urlId     String
+  ip        String
+  createdAt DateTime @default(now())
 }
 
 // ------------------------------
