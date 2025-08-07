@@ -20,7 +20,7 @@ export class GetOriginalUrlQueryHandler
   constructor(
     private readonly urlRepository: UrlRepository,
     private readonly urlCacheService: UrlCacheService,
-    private readonly eventEventBus: EventBus,
+    private readonly eventBus: EventBus,
   ) {}
 
   async execute(
@@ -34,7 +34,7 @@ export class GetOriginalUrlQueryHandler
     const url = await this.urlRepository.findByCode(Code.fromString(code));
     if (!url) throw new UrlNotFound();
 
-    this.eventEventBus.publish<UrlReadEvent>(
+    this.eventBus.publish<UrlReadEvent>(
       new UrlReadEvent(url.getId().value, url.getOwnerId().value, ip),
     );
 
