@@ -48,4 +48,24 @@ export class PrismaAnalyticsUrlRepository implements AnalyticsUrlRepository {
       analyticsUrl.uniqueVisitCount,
     );
   }
+
+  async findByUrlId(urlId: UrlId): Promise<AnalyticsUrl | null> {
+    const analyticsUrl = await this.prismaService.analyticsUrl.findUnique({
+      where: {
+        urlId: urlId.value,
+      },
+    });
+
+    if (!analyticsUrl) {
+      return null;
+    }
+
+    return new AnalyticsUrl(
+      AnalyticsUrlId.fromString(analyticsUrl.id),
+      UrlId.fromString(analyticsUrl.urlId),
+      OwnerId.fromString(analyticsUrl.ownerId),
+      analyticsUrl.visitCount,
+      analyticsUrl.uniqueVisitCount,
+    );
+  }
 }

@@ -1,11 +1,11 @@
 import { IsIP, validateSync } from 'class-validator';
 
 export class IpAddress {
-  @IsIP()
+  @IsIP(4)
   public readonly value: string;
 
   private constructor(value: string) {
-    this.value = value;
+    this.value = value === '::1' ? '127.0.0.1' : value;
     this.validateSync();
   }
 

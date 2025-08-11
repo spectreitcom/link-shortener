@@ -48,7 +48,7 @@ model AnalyticsUrl {
   @@index([urlId])
 }
 
-model Vist {
+model Visit {
   id        String   @id @default(uuid())
   urlId     String
   ip        String
@@ -58,6 +58,7 @@ model Vist {
   @@index([ownerId])
   @@index([urlId])
   @@index([createdAt])
+  @@index([ip, urlId])
 }
 
 // ------------------------------
