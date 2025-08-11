@@ -23,7 +23,8 @@ type Props = {
 };
 
 export default async function AppPage({ searchParams }: Props) {
-  const { page } = await searchParams;
+  const { page = 1 } = await searchParams;
+
   return (
     <div>
       <ShortUrlForm />
