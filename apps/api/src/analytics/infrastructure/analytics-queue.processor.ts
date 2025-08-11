@@ -41,8 +41,10 @@ export class AnalyticsQueueProcessor extends WorkerHost {
 
     try {
       await this.prismaService.$transaction(async (tx) => {
-        let analyticsUrl =
-          await this.analyticsUrlRepository.findByUrlId(_urlId);
+        let analyticsUrl = await this.analyticsUrlRepository.findByUrlId(
+          _urlId,
+          tx,
+        );
 
         if (!analyticsUrl) {
           analyticsUrl = AnalyticsUrl.create(urlId, ownerId);
@@ -58,8 +60,8 @@ export class AnalyticsQueueProcessor extends WorkerHost {
 
         const visit = Visit.create(urlId, ip, ownerId);
 
-        await this.analyticsUrlRepository.save(analyticsUrl);
-        await this.visitRepository.save(visit);
+        await this.analyticsUrlRepository.save(analyticsUrl, tx);
+        await this.visitRepository.save(visit, tx);
       });
     } catch (e) {
       this.logger.error(e);

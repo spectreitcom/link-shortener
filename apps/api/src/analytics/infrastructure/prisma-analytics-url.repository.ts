@@ -5,13 +5,22 @@ import { AnalyticsUrlId } from '../domain/value-objects/analytics-url-id';
 import { PrismaService } from '../../prisma/prisma.service';
 import { UrlId } from '../domain/value-objects/url-id';
 import { OwnerId } from '../domain/value-objects/owner-id';
+import { PrismaClient } from '@prisma/client';
+
+type TransactionClient = Parameters<
+  Parameters<PrismaClient['$transaction']>[0]
+>[0];
 
 @Injectable()
 export class PrismaAnalyticsUrlRepository implements AnalyticsUrlRepository {
   constructor(private readonly prismaService: PrismaService) {}
 
-  async save(analyticsUrl: AnalyticsUrl): Promise<void> {
-    await this.prismaService.analyticsUrl.upsert({
+  async save(
+    analyticsUrl: AnalyticsUrl,
+    tx?: TransactionClient,
+  ): Promise<void> {
+    const client = tx || this.prismaService;
+    await client.analyticsUrl.upsert({
       where: {
         id: analyticsUrl.getId().value,
       },
@@ -29,8 +38,12 @@ export class PrismaAnalyticsUrlRepository implements AnalyticsUrlRepository {
     });
   }
 
-  async findById(id: AnalyticsUrlId): Promise<AnalyticsUrl | null> {
-    const analyticsUrl = await this.prismaService.analyticsUrl.findUnique({
+  async findById(
+    id: AnalyticsUrlId,
+    tx?: TransactionClient,
+  ): Promise<AnalyticsUrl | null> {
+    const client = tx || this.prismaService;
+    const analyticsUrl = await client.analyticsUrl.findUnique({
       where: {
         id: id.value,
       },
@@ -49,8 +62,12 @@ export class PrismaAnalyticsUrlRepository implements AnalyticsUrlRepository {
     );
   }
 
-  async findByUrlId(urlId: UrlId): Promise<AnalyticsUrl | null> {
-    const analyticsUrl = await this.prismaService.analyticsUrl.findUnique({
+  async findByUrlId(
+    urlId: UrlId,
+    tx?: TransactionClient,
+  ): Promise<AnalyticsUrl | null> {
+    const client = tx || this.prismaService;
+    const analyticsUrl = await client.analyticsUrl.findUnique({
       where: {
         urlId: urlId.value,
       },
