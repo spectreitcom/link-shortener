@@ -4,6 +4,8 @@ import { IpAddress } from '../domain/value-objects/ip-address';
 import { Visit } from '../domain/visit';
 import { PrismaService } from '../../prisma/prisma.service';
 import { UrlId } from '../domain/value-objects/url-id';
+import { VisitId } from '../domain/value-objects/visit-id';
+import { OwnerId } from '../domain/value-objects/owner-id';
 import { PrismaClient } from '@prisma/client';
 
 type TransactionClient = Parameters<
@@ -39,5 +41,35 @@ export class PrismaVisitRepository implements VisitRepository {
       },
     });
     return visit === null;
+  }
+
+  async getByDateRange(
+    urlId: UrlId,
+    startDate: Date,
+    endDate: Date,
+  ): Promise<Visit[]> {
+    const visits = await this.prismaService.visit.findMany({
+      where: {
+        urlId: urlId.value,
+        createdAt: {
+          gte: startDate,
+          lte: endDate,
+        },
+      },
+      orderBy: {
+        createdAt: 'asc',
+      },
+    });
+
+    return visits.map(
+      (visit) =>
+        new Visit(
+          VisitId.fromString(visit.id),
+          UrlId.fromString(visit.urlId),
+          IpAddress.fromString(visit.ip),
+          OwnerId.fromString(visit.ownerId),
+          visit.createdAt,
+        ),
+    );
   }
 }

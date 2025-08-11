@@ -9,6 +9,7 @@ export class Visit {
     private readonly urlId: UrlId,
     private readonly ip: IpAddress,
     private readonly ownerId: OwnerId,
+    private readonly createdAt?: Date,
   ) {}
 
   static create(urlId: string, ip: string, ownerId: string) {
@@ -34,5 +35,9 @@ export class Visit {
 
   getOwnerId() {
     return this.ownerId;
+  }
+
+  getCreatedAt() {
+    return this.createdAt;
   }
 }

@@ -21,6 +21,10 @@ export class AnalyticsUrl {
     );
   }
 
+  isOwnerOf(ownerId: OwnerId) {
+    return this.ownerId.equals(ownerId);
+  }
+
   incrementVisitCount() {
     this.visitCount++;
   }

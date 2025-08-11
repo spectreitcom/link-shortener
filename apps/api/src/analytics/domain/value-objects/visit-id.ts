@@ -21,6 +21,10 @@ export class VisitId {
     return new VisitId(randomUUID());
   }
 
+  static fromString(value: string): VisitId {
+    return new VisitId(value);
+  }
+
   equals(other: VisitId): boolean {
     return this.value === other.value;
   }
