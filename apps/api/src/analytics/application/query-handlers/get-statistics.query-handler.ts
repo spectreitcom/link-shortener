@@ -5,12 +5,18 @@ import { AnalyticsUrlRepository } from '../ports/analytics-url.repository';
 import { OwnerId } from '../../domain/value-objects/owner-id';
 import { UrlId } from '../../domain/value-objects/url-id';
 import { VisitRepository } from '../ports/visit.repository';
-import { format } from 'date-fns';
+import { differenceInDays, format, isBefore } from 'date-fns';
 import { VisitView } from '../../views/visit.view';
 
 export class WrongOwnerError extends Error {
   constructor() {
     super("You don't have access to this resource");
+  }
+}
+
+export class WrongDateRangeError extends Error {
+  constructor() {
+    super('Start date must be before end date');
   }
 }
 
@@ -26,8 +32,16 @@ export class GetStatisticsQueryHandler
   async execute(query: GetStatisticsQuery): Promise<AnalyticsUrlView> {
     const { urlId, ownerId, fromDate, endDate } = query;
 
-    const _fromDate = new Date(fromDate);
-    const _endDate = new Date(endDate);
+    if (isBefore(endDate, fromDate)) {
+      throw new WrongDateRangeError();
+    }
+
+    if (differenceInDays(endDate, fromDate) > 30) {
+      throw new WrongDateRangeError();
+    }
+
+    const _fromDate = `${format(fromDate, 'yyyy-MM-dd')}T00:00:00Z`;
+    const _endDate = `${format(endDate, 'yyyy-MM-dd')}T23:59:59Z`;
 
     const _ownerId = OwnerId.fromString(ownerId);
     const _urlId = UrlId.fromString(urlId);

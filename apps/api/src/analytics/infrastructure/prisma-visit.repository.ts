@@ -45,8 +45,8 @@ export class PrismaVisitRepository implements VisitRepository {
 
   async getByDateRange(
     urlId: UrlId,
-    startDate: Date,
-    endDate: Date,
+    startDate: string,
+    endDate: string,
   ): Promise<Visit[]> {
     const visits = await this.prismaService.visit.findMany({
       where: {

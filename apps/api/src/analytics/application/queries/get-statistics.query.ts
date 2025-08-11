@@ -1,5 +1,5 @@
 import { IQuery } from '@nestjs/cqrs';
-import { format, isBefore, subDays } from 'date-fns';
+import { format, subDays } from 'date-fns';
 
 export class GetStatisticsQuery implements IQuery {
   constructor(
@@ -8,16 +8,12 @@ export class GetStatisticsQuery implements IQuery {
     public readonly fromDate: string,
     public readonly endDate: string,
   ) {
-    if (!this.fromDate) {
-      this.fromDate = format(new Date(), 'yyyy-MM-dd');
-    }
-
     if (!this.endDate) {
-      this.endDate = subDays(this.fromDate, 7).toString();
+      this.endDate = format(new Date(), 'yyyy-MM-dd');
     }
 
-    if (isBefore(this.endDate, this.fromDate)) {
-      throw new Error('End date must be after start date');
+    if (!this.fromDate) {
+      this.fromDate = subDays(new Date(this.endDate), 7).toString();
     }
   }
 }

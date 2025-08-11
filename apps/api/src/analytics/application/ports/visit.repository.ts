@@ -18,7 +18,7 @@ export abstract class VisitRepository {
   ): Promise<boolean>;
   abstract getByDateRange(
     urlId: UrlId,
-    startDate: Date,
-    endDate: Date,
+    startDate: string,
+    endDate: string,
   ): Promise<Visit[]>;
 }

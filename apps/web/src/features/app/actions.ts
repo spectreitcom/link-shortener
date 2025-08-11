@@ -90,3 +90,26 @@ export async function getUserUrls(page = 1) {
 
   return (await response.json()) as GetUrlResponse;
 }
+
+export async function getUrlStatistics(urlId: string) {
+  const session = await getSession();
+  if (!session) redirect("/api/auth/logout");
+
+  const response = await fetch(`${BACKEND_URL}/analytics/${urlId}`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${session.accessToken}`,
+    },
+  });
+
+  if (response.status === 401) {
+    redirect("/api/auth/logout");
+  }
+
+  const data = await response.json();
+
+  console.log(data); // todo;
+
+  return {};
+}

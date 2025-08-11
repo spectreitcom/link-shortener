@@ -17,6 +17,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { Card, CardContent } from "@/components/ui/card";
 import { LinkIcon } from "lucide-react";
 import { SELF_URL } from "@/lib/constants";
+import Link from "next/link";
 
 type Props = {
   searchParams: Promise<{ page: string }>;
@@ -115,7 +116,9 @@ async function List({ currentPage }: { currentPage: number }) {
               <TableCell>
                 <CopyToClipboardButton content={`${SELF_URL}/${url.code}`} />
               </TableCell>
-              <TableCell>{`${SELF_URL}/${url.code}`}</TableCell>
+              <TableCell>
+                <Link href={`/app/${url.id}`}>{`${SELF_URL}/${url.code}`}</Link>
+              </TableCell>
               <TableCell>{truncate(url.originalUrl, 100)}</TableCell>
             </TableRow>
           ))}
