@@ -1,135 +1,250 @@
-# Turborepo starter
+# Link Shortener App
 
-This Turborepo starter is maintained by the Turborepo core team.
+A modern, full-stack URL shortener application built with Next.js and NestJS, featuring user authentication, analytics, and a clean, responsive interface.
 
-## Using this example
+## 🚀 Features
 
-Run the following command:
+- **URL Shortening**: Create short, shareable links from long URLs
+- **User Authentication**: Secure sign-up and sign-in functionality
+- **Analytics Dashboard**: Track click statistics with interactive charts
+- **Date Range Filtering**: Analyze URL performance over custom time periods
+- **Responsive Design**: Works seamlessly on desktop and mobile devices
+- **Copy to Clipboard**: One-click copying of shortened URLs
+- **Real-time Statistics**: Live tracking of URL clicks and engagement
 
-```sh
-npx create-turbo@latest
+## 🏗️ Architecture
+
+This is a monorepo application built with modern technologies and best practices:
+
+### Frontend (Web App)
+- **Framework**: Next.js 15 with App Router
+- **Language**: TypeScript
+- **UI Library**: React 19 with Radix UI components
+- **Styling**: TailwindCSS v4
+- **Forms**: React Hook Form with Zod validation
+- **Charts**: Recharts for analytics visualization
+- **Authentication**: JWT with Jose library
+- **Date Handling**: date-fns and React Day Picker
+
+### Backend (API)
+- **Framework**: NestJS with TypeScript
+- **Architecture**: Domain-Driven Design (DDD) with CQRS pattern
+- **Database**: PostgreSQL with Prisma ORM
+- **Caching**: Redis with ioredis
+- **Authentication**: JWT with Passport.js strategies
+- **Password Hashing**: Argon2
+- **Job Queue**: BullMQ for background processing
+- **Testing**: Jest with comprehensive test coverage
+
+### Infrastructure
+- **Containerization**: Docker Compose for local development
+- **Database**: PostgreSQL with persistent volumes
+- **Cache**: Redis with persistent storage
+- **Monorepo**: Turborepo for efficient builds and development
+- **Package Manager**: npm with workspaces
+
+## 🛠️ Tech Stack
+
+| Category | Technologies |
+|----------|-------------|
+| Frontend | Next.js, React, TypeScript, TailwindCSS |
+| Backend | NestJS, TypeScript, Prisma, PostgreSQL |
+| Caching | Redis, BullMQ |
+| UI/UX | Radix UI, Lucide Icons, Recharts |
+| Authentication | JWT, Passport.js, Argon2 |
+| Development | Turborepo, ESLint, Prettier |
+| Infrastructure | Docker, Docker Compose |
+
+## 📦 Installation
+
+### Prerequisites
+- Node.js >= 18
+- npm >= 11.5.1
+- Docker and Docker Compose
+
+### Setup Instructions
+
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd link-shortener-app
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Start the infrastructure services**
+   ```bash
+   docker-compose up -d
+   ```
+
+4. **Setup the database**
+   ```bash
+   cd apps/api
+   npm run db:migrate
+   ```
+
+5. **Start the development servers**
+   ```bash
+   # From the root directory
+   npm run dev
+   ```
+
+This will start:
+- Web app on `http://localhost:3000`
+- API server on `http://localhost:3001`
+- PostgreSQL on `localhost:5432`
+- Redis on `localhost:6379`
+
+## 🚦 Usage
+
+### For Users
+
+1. **Sign Up/Sign In**: Create an account or log in to access the dashboard
+2. **Shorten URLs**: Enter a long URL to generate a short, shareable link
+3. **View Analytics**: Track clicks, view statistics, and analyze performance
+4. **Manage URLs**: View all your shortened URLs in one place
+5. **Copy Links**: Use the copy-to-clipboard feature for easy sharing
+
+### For Developers
+
+#### Available Scripts
+
+```bash
+# Development
+npm run dev          # Start all apps in development mode
+npm run build        # Build all apps for production
+npm run lint         # Lint all code
+npm run format       # Format code with Prettier
+
+# Database operations (from apps/api)
+npm run db:migrate   # Run database migrations
+npm run db:studio    # Open Prisma Studio
+
+# Testing (from apps/api)
+npm run test         # Run unit tests
+npm run test:e2e     # Run end-to-end tests
+npm run test:cov     # Run tests with coverage
 ```
 
-## What's inside?
-
-This Turborepo includes the following packages/apps:
-
-### Apps and Packages
-
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
-
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-
-### Build
-
-To build all apps and packages, run the following command:
+#### Project Structure
 
 ```
-cd my-turborepo
-
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo build
-
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo build
-yarn dlx turbo build
-pnpm exec turbo build
+link-shortener-app/
+├── apps/
+│   ├── web/                 # Next.js frontend application
+│   │   ├── src/
+│   │   │   ├── app/         # Next.js App Router pages
+│   │   │   ├── features/    # Feature-based modules
+│   │   │   └── components/  # Reusable UI components
+│   │   └── package.json
+│   └── api/                 # NestJS backend application
+│       ├── src/
+│       │   ├── gateway/     # API controllers
+│       │   ├── shortener/   # URL shortening domain
+│       │   ├── analytics/   # Analytics domain
+│       │   └── auth/        # Authentication domain
+│       └── package.json
+├── docker-compose.yml       # Infrastructure services
+├── turbo.json              # Turborepo configuration
+└── package.json            # Root package configuration
 ```
 
-You can build a specific package by using a [filter](https://turborepo.com/docs/crafting-your-repository/running-tasks#using-filters):
+## 🔌 API Endpoints
 
-```
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo build --filter=docs
+### Authentication
+- `POST /auth/sign-up` - Create new user account
+- `POST /auth/sign-in` - User login
+- `POST /auth/logout` - User logout
 
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo build --filter=docs
-yarn exec turbo build --filter=docs
-pnpm exec turbo build --filter=docs
-```
+### URL Management
+- `POST /urls` - Create shortened URL
+- `GET /urls` - Get user's URLs
+- `GET /urls/:id` - Get specific URL details
+- `GET /:code` - Redirect to original URL
 
-### Develop
+### Analytics
+- `GET /analytics/statistics/:urlId` - Get URL statistics
+- `GET /analytics/statistics/:urlId?from=date&to=date` - Get statistics for date range
 
-To develop all apps and packages, run the following command:
+### Users
+- `GET /users/profile` - Get user profile
+- `PUT /users/profile` - Update user profile
 
-```
-cd my-turborepo
+## 🏃‍♂️ Development Workflow
 
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo dev
+### Code Organization
+- **Domain-Driven Design**: Business logic organized into domains
+- **CQRS Pattern**: Separate command and query handling
+- **Feature-Based Structure**: Frontend organized by features
+- **Clean Architecture**: Clear separation of concerns
 
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo dev
-yarn exec turbo dev
-pnpm exec turbo dev
-```
+### Database Management
+- **Migrations**: Use Prisma migrations for schema changes
+- **Seeding**: Populate database with initial data
+- **Studio**: Visual database browser with Prisma Studio
 
-You can develop a specific package by using a [filter](https://turborepo.com/docs/crafting-your-repository/running-tasks#using-filters):
+### Quality Assurance
+- **TypeScript**: Full type safety across the stack
+- **ESLint**: Code linting with consistent rules
+- **Prettier**: Automated code formatting
+- **Jest**: Comprehensive testing suite
 
-```
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo dev --filter=web
+## 🔒 Security Features
 
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo dev --filter=web
-yarn exec turbo dev --filter=web
-pnpm exec turbo dev --filter=web
-```
+- **Password Hashing**: Argon2 for secure password storage
+- **JWT Authentication**: Stateless authentication with secure tokens
+- **Input Validation**: Comprehensive validation with Zod schemas
+- **SQL Injection Protection**: Prisma ORM with prepared statements
+- **Rate Limiting**: Built-in protection against abuse
 
-### Remote Caching
+## 🚀 Deployment
 
-> [!TIP]
-> Vercel Remote Cache is free for all plans. Get started today at [vercel.com](https://vercel.com/signup?/signup?utm_source=remote-cache-sdk&utm_campaign=free_remote_cache).
-
-Turborepo can use a technique known as [Remote Caching](https://turborepo.com/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup?utm_source=turborepo-examples), then enter the following commands:
-
-```
-cd my-turborepo
-
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo login
-
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo login
-yarn exec turbo login
-pnpm exec turbo login
+### Production Build
+```bash
+npm run build
 ```
 
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
+### Environment Variables
+Create `.env` files in respective app directories:
 
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
+**apps/api/.env**
 ```
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo link
-
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo link
-yarn exec turbo link
-pnpm exec turbo link
+DATABASE_URL="postgresql://postgres:postgres@localhost:5432/link_shortener"
+REDIS_URL="redis://localhost:6379"
+JWT_SECRET="your-jwt-secret"
 ```
 
-## Useful Links
+**apps/web/.env.local**
+```
+NEXT_PUBLIC_API_URL="http://localhost:3001"
+```
 
-Learn more about the power of Turborepo:
+## 📊 Performance Features
 
-- [Tasks](https://turborepo.com/docs/crafting-your-repository/running-tasks)
-- [Caching](https://turborepo.com/docs/crafting-your-repository/caching)
-- [Remote Caching](https://turborepo.com/docs/core-concepts/remote-caching)
-- [Filtering](https://turborepo.com/docs/crafting-your-repository/running-tasks#using-filters)
-- [Configuration Options](https://turborepo.com/docs/reference/configuration)
-- [CLI Usage](https://turborepo.com/docs/reference/command-line-reference)
+- **Caching**: Redis for fast URL lookups
+- **Background Jobs**: BullMQ for processing analytics
+- **Database Optimization**: Indexed queries and efficient schemas
+- **Frontend Optimization**: Next.js optimizations and code splitting
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📝 License
+
+This project is licensed under the UNLICENSED license.
+
+## 🆘 Support
+
+For support, please create an issue in the repository or contact the development team.
+
+---
+
+Built with ❤️ using modern web technologies and best practices.
