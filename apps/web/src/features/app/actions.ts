@@ -122,9 +122,6 @@ export async function getUrlStatistics(
     },
   );
 
-  // todo;
-  // if (response.status === 400) return { error: true };
-
   if (response.status === 404) return notFound();
 
   if (response.status === 401) {
@@ -151,9 +148,6 @@ export async function getUrl(urlId: string) {
       Authorization: `Bearer ${session.accessToken}`,
     },
   });
-
-  // todo;
-  // if (response.status === 400) return { error: true };
 
   if (response.status === 404) return notFound();
 
