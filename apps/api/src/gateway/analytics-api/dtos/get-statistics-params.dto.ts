@@ -1,11 +1,11 @@
-import { IsDate, IsOptional } from 'class-validator';
+import { IsOptional, IsDateString } from 'class-validator';
 
 export class GetStatisticsParamsDto {
   @IsOptional()
-  @IsDate()
+  @IsDateString()
   readonly fromDate: string;
 
   @IsOptional()
-  @IsDate()
+  @IsDateString()
   readonly endDate: string;
 }

@@ -7,14 +7,13 @@ import { ChevronLeftIcon } from "lucide-react";
 
 type Props = {
   params: Promise<{ urlId: string }>;
-  searchParams: Promise<{ fromDate: string; endDate: string }>;
 };
 
-export default async function UrlDetailsPage({ params, searchParams }: Props) {
+export default async function UrlDetailsPage({ params }: Props) {
   const { urlId } = await params;
-  const { fromDate, endDate } = await searchParams;
+
   const urlData = await getUrl(urlId);
-  const stats = await getUrlStatistics(urlId, fromDate, endDate);
+  const stats = await getUrlStatistics(urlId);
 
   return (
     <div>
@@ -28,10 +27,12 @@ export default async function UrlDetailsPage({ params, searchParams }: Props) {
           http://localhost:3000/{urlData.code}
         </h3>
       </div>
+
       <BasicStats
         uniqueVisitCount={stats.uniqueVisitCount}
         visitCount={stats.visitCount}
       />
+
       <StatisticsChart visits={stats.visits} />
     </div>
   );

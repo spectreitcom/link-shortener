@@ -122,7 +122,10 @@ export async function getUrlStatistics(
     },
   );
 
-  // todo: handle more status codes
+  // todo;
+  // if (response.status === 400) return { error: true };
+
+  if (response.status === 404) return notFound();
 
   if (response.status === 401) {
     redirect("/api/auth/logout");
@@ -149,7 +152,8 @@ export async function getUrl(urlId: string) {
     },
   });
 
-  // todo: handle more status codes
+  // todo;
+  // if (response.status === 400) return { error: true };
 
   if (response.status === 404) return notFound();
 

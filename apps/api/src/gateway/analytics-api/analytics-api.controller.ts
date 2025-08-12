@@ -4,6 +4,7 @@ import {
   ForbiddenException,
   Get,
   InternalServerErrorException,
+  Logger,
   Param,
   Query,
   UseGuards,
@@ -20,23 +21,26 @@ import {
 
 @Controller('analytics')
 export class AnalyticsApiController {
+  private readonly logger = new Logger(AnalyticsApiController.name);
+
   constructor(private readonly analyticsService: AnalyticsService) {}
 
   @UseGuards(JwtGuard)
   @Get(':urlId')
-  getStatistics(
+  async getStatistics(
     @CurrentUser() user: ValidatedUser,
     @Param('urlId') urlId: string,
     @Query() queryParams: GetStatisticsParamsDto,
   ) {
     try {
-      return this.analyticsService.getStatistics(
+      return await this.analyticsService.getStatistics(
         urlId,
         user.id,
         queryParams.fromDate,
         queryParams.endDate,
       );
     } catch (e) {
+      this.logger.error(e);
       if (e instanceof WrongOwnerError) {
         throw new ForbiddenException(e.message);
       } else if (e instanceof WrongDateRangeError) {

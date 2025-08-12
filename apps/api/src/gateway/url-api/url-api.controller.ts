@@ -33,24 +33,30 @@ export class UrlApiController {
   }
 
   @Get()
-  getUserUrls(
+  async getUserUrls(
     @Query() searchParams: GetUserUrlsParamsDto,
     @CurrentUser() user: ValidatedUser,
   ) {
-    return this.shortenerService.getUserUrls(user.id, searchParams.page);
+    return await this.shortenerService.getUserUrls(user.id, searchParams.page);
   }
 
   @UseGuards(JwtGuard)
   @Get('object/:urlId')
-  getUrl(@Param('urlId') urlId: string, @CurrentUser() user: ValidatedUser) {
-    return this.shortenerService.getUrl(urlId, user.id);
+  async getUrl(
+    @Param('urlId') urlId: string,
+    @CurrentUser() user: ValidatedUser,
+  ) {
+    return await this.shortenerService.getUrl(urlId, user.id);
   }
 
   @Public()
   @Get(':code')
-  getOriginalUrl(@Param('code') code: string, @Req() request: Request) {
+  async getOriginalUrl(@Param('code') code: string, @Req() request: Request) {
     try {
-      return this.shortenerService.getOriginalUrl(code, request?.ip ?? '');
+      return await this.shortenerService.getOriginalUrl(
+        code,
+        request?.ip ?? '',
+      );
     } catch (e) {
       if (e instanceof UrlNotFound) {
         throw new NotFoundException(e.message);
