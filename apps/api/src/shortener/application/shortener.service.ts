@@ -5,6 +5,8 @@ import { GetOriginalUrlQuery } from './queries/get-original-url.query';
 import { GetOriginalUrlQueryResponse } from './query-handlers/get-original-url.query-handler';
 import { GetUsersUrlsQuery } from './queries/get-users-urls.query';
 import { GetUsersUrlsQueryResponse } from './query-handlers/get-user-urls.query-handler';
+import { UserUrlView } from '../views/user-url.view';
+import { GetUrlQuery } from './queries/get-url.query';
 
 @Injectable()
 export class ShortenerService {
@@ -58,5 +60,18 @@ export class ShortenerService {
       GetUsersUrlsQuery,
       GetUsersUrlsQueryResponse
     >(new GetUsersUrlsQuery(userId, page));
+  }
+
+  /**
+   * Retrieves a user-specific URL based on the provided identifiers.
+   *
+   * @param {string} urlId - The identifier for the URL to be retrieved.
+   * @param {string} ownerId - The identifier of the owner of the URL.
+   * @return {Promise<UserUrlView>} A promise that resolves to the view of the user's URL.
+   */
+  async getUrl(urlId: string, ownerId: string): Promise<UserUrlView> {
+    return this.queryBus.execute<GetUrlQuery, UserUrlView>(
+      new GetUrlQuery(urlId, ownerId),
+    );
   }
 }

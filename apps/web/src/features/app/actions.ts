@@ -6,7 +6,7 @@ import {
 } from "@/features/app/schemas";
 import { z } from "zod";
 import { BACKEND_URL } from "@/lib/constants";
-import { redirect, permanentRedirect } from "next/navigation";
+import { redirect, permanentRedirect, notFound } from "next/navigation";
 import { getSession } from "@/lib/session";
 import { UserUrl } from "@/features/app/types";
 import { revalidatePath } from "next/cache";
@@ -61,7 +61,7 @@ export async function getOriginalUrl(code: string) {
   permanentRedirect(data.url);
 }
 
-type GetUrlResponse = {
+type GetUserUrlsResponse = {
   urls: UserUrl[];
   totalPages: number;
 };
@@ -88,14 +88,60 @@ export async function getUserUrls(page = 1) {
     redirect("/api/auth/logout");
   }
 
-  return (await response.json()) as GetUrlResponse;
+  return (await response.json()) as GetUserUrlsResponse;
 }
 
-export async function getUrlStatistics(urlId: string) {
+export type GetUrlStatisticsResponse = {
+  visitCount: number;
+  uniqueVisitCount: number;
+  visits: { date: string; count: number }[];
+};
+
+export async function getUrlStatistics(
+  urlId: string,
+  fromDate?: string,
+  endDate?: string,
+) {
   const session = await getSession();
   if (!session) redirect("/api/auth/logout");
 
-  const response = await fetch(`${BACKEND_URL}/analytics/${urlId}`, {
+  const searchParams = new URLSearchParams();
+  if (fromDate && endDate) {
+    searchParams.set("fromDate", fromDate);
+    searchParams.set("endDate", endDate);
+  }
+
+  const response = await fetch(
+    `${BACKEND_URL}/analytics/${urlId}?${searchParams.toString()}`,
+    {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${session.accessToken}`,
+      },
+    },
+  );
+
+  // todo: handle more status codes
+
+  if (response.status === 401) {
+    redirect("/api/auth/logout");
+  }
+
+  return (await response.json()) as GetUrlStatisticsResponse;
+}
+
+export type GetUrlResponse = {
+  id: string;
+  originalUrl: string;
+  code: string;
+};
+
+export async function getUrl(urlId: string) {
+  const session = await getSession();
+  if (!session) redirect("/api/auth/logout");
+
+  const response = await fetch(`${BACKEND_URL}/urls/object/${urlId}`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -103,13 +149,13 @@ export async function getUrlStatistics(urlId: string) {
     },
   });
 
+  // todo: handle more status codes
+
+  if (response.status === 404) return notFound();
+
   if (response.status === 401) {
     redirect("/api/auth/logout");
   }
 
-  const data = await response.json();
-
-  console.log(data); // todo;
-
-  return {};
+  return (await response.json()) as GetUrlResponse;
 }

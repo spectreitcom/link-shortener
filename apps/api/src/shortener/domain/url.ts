@@ -56,6 +56,10 @@ export class Url {
     return JSON.stringify(this.toJson());
   }
 
+  isOwnerOf(ownerId: OwnerId) {
+    return this.ownerId.equals(ownerId);
+  }
+
   static deserialize(jsonStr: string) {
     const data = JSON.parse(jsonStr) as JsonUrl;
     return new Url(
