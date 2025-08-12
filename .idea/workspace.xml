@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c9bb9721-4cbd-4f9a-94b0-b0c8145e2d52" name="Changes" comment="Update README with detailed project overview, architecture breakdown, installation steps, and usage instructions">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/git_toolbox_prj.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/link-shortener-app.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/prettier.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/prettier.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="SET_USER_NAME_GLOBALLY" value="false" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;spectreitcom&quot;
+  }
+}</component>
+  <component name="GitToolBoxStore">
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="develop" />
+                    <option name="lastUsedInstant" value="1754305979" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="main" />
+                    <option name="lastUsedInstant" value="1754305978" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
+  </component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/spectreitcom/link-shortener.git&quot;,
+    &quot;accountId&quot;: &quot;3eb674ca-7e8d-45a8-be8e-1b1e83895077&quot;
+  }
+}</component>
+  <component name="HttpClientEndpointsTabState">
+    <option name="cachedRequestData" value="&lt;CachedHttpClientTabRequests&gt;&#10;  &lt;entry key=&quot;7050ae7b6b384ff244b15163f4f2d32ac41ef933&quot; value=&quot;###&amp;#10;POST http://localhost:8080/users&quot; /&gt;&#10;&lt;/CachedHttpClientTabRequests&gt;" />
+  </component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="30osP58vf37rQTkKtQqL6ThWZ1L" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "HTTP Request.generated-requests | #1.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "develop",
+    "javascript.nodejs.core.library.configured.version": "24.4.1",
+    "javascript.nodejs.core.library.typings.version": "24.2.0",
+    "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "/Users/przemyslawchudzinski/Documents/Personal/Programming/link-shortener-app/apps/api/src/shortener/application/query-handlers",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "/Users/przemyslawchudzinski/Documents/Personal/Programming/link-shortener-app/node_modules/prettier",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.Color Scheme Font",
+    "to.speed.mode.migration.done": "true",
+    "ts.external.directory.path": "/Users/przemyslawchudzinski/Documents/Personal/Programming/link-shortener-app/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
+  }
+}]]></component>
+  <component name="ReactDesignerToolWindowState">
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.intellij.reactbuddy.reactComponents" value="false" />
+        <entry key="com.intellij.reactbuddy.reactInspector" value="false" />
+        <entry key="com.intellij.reactbuddy.storybook" value="false" />
+      </map>
+    </option>
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/apps/api/src/shortener/application/query-handlers" />
+      <recent name="$PROJECT_DIR$/apps/api/src/analytics/application/query-handlers" />
+      <recent name="$PROJECT_DIR$/apps/api/src/analytics/infrastructure" />
+      <recent name="$PROJECT_DIR$/apps/api/src/analytics/domain/value-objects" />
+      <recent name="$PROJECT_DIR$/apps/api/src/shortener/infrastructure" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/apps/api/src/shortener/views" />
+      <recent name="$PROJECT_DIR$/apps/api/src/users/application" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="generated-requests | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" executionIdentifier="#1" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="HTTP Request.generated-requests | #1" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-e03c56caf84a-JavaScript-WS-252.23892.411" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c9bb9721-4cbd-4f9a-94b0-b0c8145e2d52" name="Changes" comment="" />
+      <created>1754305232608</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1754305232608</updated>
+      <workItem from="1754305234138" duration="18783000" />
+      <workItem from="1754390521714" duration="408000" />
+      <workItem from="1754390938503" duration="7711000" />
+      <workItem from="1754474805985" duration="123000" />
+      <workItem from="1754474966370" duration="20586000" />
+      <workItem from="1754524999836" duration="19039000" />
+      <workItem from="1754903432571" duration="14229000" />
+      <workItem from="1754992833021" duration="6269000" />
+      <workItem from="1754999131376" duration="266000" />
+    </task>
+    <task id="LOCAL-00001" summary="init">
+      <option name="closed" value="true" />
+      <created>1754305822306</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1754305822307</updated>
+    </task>
+    <task id="LOCAL-00002" summary="init">
+      <option name="closed" value="true" />
+      <created>1754305865341</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1754305865341</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Add foundational backend structure for API development&#10;&#10;- Introduced Prisma for database ORM, migrations, and schema management.&#10;- Added PostgreSQL and Redis services via Docker Compose.&#10;- Implemented authentication module with JWT and local strategies.&#10;- Established user domain with value objects, view models, and repository patterns.&#10;- Enabled command-based architecture for user creation.">
+      <option name="closed" value="true" />
+      <created>1754319329605</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1754319329605</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Refactor authentication flow to decouple user validation and token generation&#10;&#10;- Replaced `AuthenticationService` usage in `LocalStrategy` with direct user validation.&#10;- Introduced `ValidatedUser` type for consistent user representations across the authentication module.&#10;- Updated `CurrentUser` decorator to use the `ValidatedUser` type.&#10;- Refactored `AuthenticationService` to simplify token generation and user login handling.&#10;- Enhanced `.env-example` with JWT configuration placeholders.">
+      <option name="closed" value="true" />
+      <created>1754386680790</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1754386680790</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Adjust global color palette to refine visual consistency across themes">
+      <option name="closed" value="true" />
+      <created>1754386841230</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1754386841230</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Add reusable UI components and update dependencies&#10;&#10;- Implemented foundational UI components (`Alert`, `Button`, `Card`, `Form`, `Input`, `Label`, `Toaster`).&#10;- Extended `.env-example` with backend URL placeholder.&#10;- Added and updated dependencies: `@hookform/resolvers`, `@radix-ui/react-label`, `@radix-ui/react-slot`, `react-hook-form`, `sonner`, `zod`, etc.&#10;- Introduced middleware for session handling and route guarding.">
+      <option name="closed" value="true" />
+      <created>1754393158008</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1754393158008</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Remove unused `redirect` import from session utility">
+      <option name="closed" value="true" />
+      <created>1754393198316</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1754393198316</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Add `Navbar` component and app layoutemplate&#10;&#10;- Created a `Navbar` component with session-based user greeting and logout functionality.&#10;- Built a reusable `AppLayout` component integrating the `Navbar`.">
+      <option name="closed" value="true" />
+      <created>1754393838977</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1754393838977</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Add URL shortening form and validation schema&#10;&#10;- Introduced `ShortUrlForm` component with React Hook Form and Zod schema for URL validation.&#10;- Created `createShortenUrlSchema` for validating URL input.&#10;- Updated app layout to include form with improved styling using container utility.">
+      <option name="closed" value="true" />
+      <created>1754394890083</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1754394890083</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Add URL shortening feature across frontend and backend&#10;&#10;- **Frontend**:&#10;  - Developed `ShortUrlForm` component for creating shortened URLs.&#10;  - Added `GeneratedUrlPreview` component for displaying generated short URLs.&#10;  - Integrated backend API with `createShortenUrl` function.&#10;  - Enhanced `Button` component with loading state.&#10;&#10;- **Backend**:&#10;  - Introduced `Shortener` module with domain-driven architecture.&#10;  - Created `Url` entity with associated value objects and repository.&#10;  - Implemented `UrlApiController` for handling URL creation requests.&#10;  - Added `CreateUrlCommand` with its handler for command execution.&#10;  - Updated Prisma schema with `Url` model and migrations.">
+      <option name="closed" value="true" />
+      <created>1754485021917</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1754485021917</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Refactor user creation to exclude `cPassword` and handle unsuccessful API responses">
+      <option name="closed" value="true" />
+      <created>1754485640200</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1754485640200</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Add original URL retrieval feature to URL shortening service&#10;&#10;- **Backend**:&#10;  - Created `getOriginalUrl` endpoint in `UrlApiController` for retrieving original URLs using shortened codes.&#10;  - Introduced `GetOriginalUrlQuery` and its corresponding handler for query processing within the `Shortener` module.&#10;  - Enhanced `ShortenerService` to handle `GetOriginalUrlQuery` through `QueryBus`.&#10;  - Added error handling for non-existent URLs, returning `NotFoundException` or `InternalServerErrorException` as appropriate.">
+      <option name="closed" value="true" />
+      <created>1754486354759</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1754486354759</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Add redirect-to-original-URL functionality for shortened codes&#10;&#10;- **Frontend**:&#10;  - Introduced `getOriginalUrl` function in `actions.ts` to fetch original URLs based on shortened codes and perform a permanent redirect.&#10;  - Created `[code]/page.tsx` for handling dynamic route redirection with suspense-based fallback loading state. &#10;- Improved navigation utility by including `permanentRedirect` from `next/navigation`.">
+      <option name="closed" value="true" />
+      <created>1754487197137</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1754487197137</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Add Redis-based URL caching mechanism to backend&#10;&#10;- **Backend**:&#10;  - Added `UrlCacheService` abstract class and its implementation `AppUrlCacheService` using Redis.&#10;  - Integrated caching in `CreateUrlCommandHandler` to store shortened URLs and their corresponding codes.&#10;  - Enhanced `GetOriginalUrlQueryHandler` to retrieve original URLs from Redis cache before querying the database.&#10;  - Updated `InfrastructureModule` to include Redis-based caching service.&#10;  - Extended `.env-example` with `REDIS_URL` placeholder. &#10;  - Installed `ioredis` for Redis integration and updated dependencies.">
+      <option name="closed" value="true" />
+      <created>1754491028893</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1754491028893</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Add user-specific URL retrieval with pagination support&#10;&#10;- **Backend**:&#10;  - Created `UserUrlViewRepository` interface and its Prisma-based implementation.&#10;  - Added `GetUsersUrlsQuery` and corresponding query handler.&#10;  - Integrated `getUserUrls` method in `ShortenerService` for query execution.&#10;  - Introduced `GetUserUrlsParamsDto` for handling pagination parameters.&#10;  - Added `getUserUrls` endpoint in `UrlApiController`.&#10;  - Updated `InfrastructureModule` to include `UserUrlViewRepository`.">
+      <option name="closed" value="true" />
+      <created>1754492337910</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1754492337910</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Add reusable Pagination, Table, and Tooltip components&#10;&#10;- **Frontend**:&#10;  - Implemented reusable `Pagination` component featuring navigation links, ellipsis, and utility functions for page transitions.&#10;  - Developed a modular `Table` component including rows, headers, footer, cells, and caption support.&#10;  - Created a `Tooltip` component utilizing `@radix-ui/react-tooltip` for enhanced user interactivity.&#10;  - Replaced inline copy-to-clipboard logic in `GeneratedUrlPreview` with reusable `CopyToClipboardButton`.&#10;  - Integrated `getUserUrls` with backend support for paginated URLs.&#10;  - Updated dependencies to add support for Radix UI toolkits.&#10;&#10;- **Backend**:&#10;  - Modified actions to include pagination handling using `getUserUrls`.&#10;  - Added `UserUrl` typing and revalidation logic to ensure dynamic updates to paginated data.">
+      <option name="closed" value="true" />
+      <created>1754525172955</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1754525172955</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Add Skeleton Loader, Pagination, and Empty State for URL List&#10;&#10;- **Frontend**:&#10;  - Added `Skeleton` component for loading placeholders.&#10;  - Implemented `MyPagination` component for user-friendly pagination.&#10;  - Introduced `SkeletonLoader` for list loading state and `NoData` for empty list display.&#10;  - Updated `AppPage` to display paginated and skeleton-based loading states.&#10;  - Enhanced `List` component with dynamic page handling and fallback states using `SELF_URL`.">
+      <option name="closed" value="true" />
+      <created>1754531338878</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1754531338878</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Simplify pagination logic and remove redundant comments in `pagination.tsx`.">
+      <option name="closed" value="true" />
+      <created>1754531427591</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1754531427591</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Add analytics and visit tracking models to Prisma schema&#10;&#10;- **Backend**:  &#10;  - Introduced `AnalyticsUrl` and `Vist` models for URL visit tracking.  &#10;  - Added `visitCount` field to `AnalyticsUrl` with a database-level default value.  &#10;  - Implemented `createdAt` timestamps for `Url` and `Vist` for tracking creation times.  &#10;  - Updated Prisma migrations to reflect schema changes.  &#10;  - Created unique index on `AnalyticsUrl.urlId` for efficient lookups.">
+      <option name="closed" value="true" />
+      <created>1754532631055</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1754532631055</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Add `orderBy` clause to sort user URLs by creation date in descending order">
+      <option name="closed" value="true" />
+      <created>1754532688533</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1754532688533</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Add visit tracking and URL analytics features&#10;&#10;- **Backend**:&#10;  - Extended `AnalyticsUrl` model with `uniqueVisitCount` and `ownerId` fields.&#10;  - Added `ownerId` to `Vist` model for user-specific visit tracking.&#10;  - Created value objects and repositories for visit and analytics handling.&#10;  - Integrated event publishing to record URL read events with IP addresses.&#10;  - Implemented Redis-backed queue with BullMQ for analytics processing.&#10;  - Added related migrations, schema updates, and module wiring.">
+      <option name="closed" value="true" />
+      <created>1754539406557</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1754539406557</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Fix typo in `GetOriginalUrlQueryHandler`: rename `eventEventBus` to `eventBus` for correctness.">
+      <option name="closed" value="true" />
+      <created>1754539764580</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1754539764580</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Refactor `UrlCacheService` to use `Url` entity instead of raw values and enhance Redis caching logic.">
+      <option name="closed" value="true" />
+      <created>1754540902511</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1754540902511</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Rename `Vist` to `Visit`, add IP and URL-based unique visit tracking, and improve analytics processing with transactional support&#10;&#10;- **Backend**:&#10;  - Renamed `Vist` to `Visit` in models, schema, and repositories.&#10;  - Extended `Visit` model with combined `ip` and `urlId` unique index.&#10;  - Updated `AnalyticsQueueProcessor` to handle transactional visit and analytics updates.&#10;  - Enhanced `IpAddress` value object to normalize localhost IP addresses.&#10;  - Added `findByUrlId` method to `AnalyticsUrlRepository` for efficient lookups. &#10;&#10;- **Prisma**:&#10;  - Updated database schema with new indexes and renamed models.&#10;  - Added migrations for schema updates reflecting new `Visit` structure and analytics enhancements.">
+      <option name="closed" value="true" />
+      <created>1754904478890</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1754904478890</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Add transactional support for `save` and `findByUrlId` methods in repositories&#10;&#10;- Updated `VisitRepository` and `AnalyticsUrlRepository` to support optional transaction clients.&#10;- Refactored `PrismaAnalyticsUrlRepository` and `PrismaVisitRepository` to conditionally use transaction clients.&#10;- Modified `AnalyticsQueueProcessor` to use transactional updates for consistency.">
+      <option name="closed" value="true" />
+      <created>1754904908249</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1754904908249</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Set default value for `page` parameter in `AppPage` component">
+      <option name="closed" value="true" />
+      <created>1754905437099</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1754905437099</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Add date-based visit statistics retrieval for analytics API&#10;&#10;- **Backend**:&#10;  - Introduced `getByDateRange` method in `VisitRepository` for filtering visits by date.&#10;  - Added `GetStatisticsQuery` and handler for querying analytics data by date range.&#10;  - Created `AnalyticsService` to handle statistics retrieval logic.&#10;  - Implemented `AnalyticsApiController` endpoint for fetching URL visit statistics.&#10;  - Added `GetStatisticsParamsDto` for validating query parameters.&#10;  - Extended `Visit` and `AnalyticsUrl` models with necessary methods and attributes.&#10;  - Imported and utilized the `date-fns` library for date manipulation and formatting.">
+      <option name="closed" value="true" />
+      <created>1754910583509</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1754910583509</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Add validation for date ranges in analytics API and enhance statistics retrieval&#10;&#10;- **Backend**:&#10;  - Introduced `WrongDateRangeError` for handling invalid date range queries.&#10;  - Updated `GetStatisticsQueryHandler` to validate and restrict date ranges to a maximum of 30 days.&#10;  - Refined `VisitRepository` and its implementation to use formatted date strings.&#10;  - Improved error handling in `AnalyticsApiController` with specific exceptions for date range and ownership validation.&#10;  &#10;- **Frontend**:&#10;  - Added link navigation for URLs in the `AppPage` component.&#10;  - Created basic template for `UrlDetailsPage` and connected statistics retrieval via `getUrlStatistics`.">
+      <option name="closed" value="true" />
+      <created>1754913040303</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1754913040303</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Add detailed URL retrieval and statistics endpoints, update Prisma repository methods, and enhance frontend support&#10;&#10;- **Backend**:&#10;  - Added `findById` method in `PrismaUrlRepository` for fetching URLs by ID.&#10;  - Introduced `getUrl` endpoint in `UrlApiController` guarded by `JwtGuard`.&#10;  - Modified `PrismaShortenerService` to construct `Url` entities from Prisma models.&#10;&#10;- **Frontend**:&#10;  - Updated `actions.ts`:&#10;    - Added `getUrlStatistics` function with optional date range filtering.&#10;    - Updated `getUrl` function to handle 404 status with navigation to `notFound`.&#10;    - Renamed and refactored types for clarity (`GetUrlResponse → GetUserUrlsResponse`).&#10;  - Integrated `recharts` library for future data visualization.&#10;&#10;- **Dependencies**:&#10;  - Added `recharts`, `@reduxjs/toolkit`, `react-redux` for front-end enhancements.&#10;  - Introduced `d3` and related types for data manipulation and visualization.">
+      <option name="closed" value="true" />
+      <created>1754993106563</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1754993106563</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Add date range management, calendar and popover components, and improve API logging&#10;&#10;- **Frontend**:&#10;  - Introduced `Calendar` and `Popover` UI components with customizable styles.&#10;  - Added `DateRange` and `StatsDateRange` components for managing date-based input.&#10;  - Enhanced `actions.ts` with error handling for various HTTP response codes.&#10;  - Installed new dependencies: `react-day-picker`, `date-fns`, and `@radix-ui/react-popover`.&#10;&#10;- **Backend**:&#10;  - Replaced deprecated `IsDate` validator with `IsDateString` in `GetStatisticsParamsDto`.&#10;  - Added `Logger` for enhanced error tracking in API controllers.&#10;  - Refactored API methods to use `async` and `await` consistently.  &#10;&#10;- **Dependencies**:&#10;  - Updated `package-lock.json` to reflect the newly added libraries.">
+      <option name="closed" value="true" />
+      <created>1754998240803</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1754998240803</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Remove commented-out TODOs related to 400 status handling in `actions.ts`">
+      <option name="closed" value="true" />
+      <created>1754998629109</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1754998629109</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Update README with detailed project overview, architecture breakdown, installation steps, and usage instructions">
+      <option name="closed" value="true" />
+      <created>1754999001790</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1754999001790</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add `Navbar` component and app layoutemplate&#10;&#10;- Created a `Navbar` component with session-based user greeting and logout functionality.&#10;- Built a reusable `AppLayout` component integrating the `Navbar`." />
+    <MESSAGE value="Add URL shortening form and validation schema&#10;&#10;- Introduced `ShortUrlForm` component with React Hook Form and Zod schema for URL validation.&#10;- Created `createShortenUrlSchema` for validating URL input.&#10;- Updated app layout to include form with improved styling using container utility." />
+    <MESSAGE value="Add URL shortening feature across frontend and backend&#10;&#10;- **Frontend**:&#10;  - Developed `ShortUrlForm` component for creating shortened URLs.&#10;  - Added `GeneratedUrlPreview` component for displaying generated short URLs.&#10;  - Integrated backend API with `createShortenUrl` function.&#10;  - Enhanced `Button` component with loading state.&#10;&#10;- **Backend**:&#10;  - Introduced `Shortener` module with domain-driven architecture.&#10;  - Created `Url` entity with associated value objects and repository.&#10;  - Implemented `UrlApiController` for handling URL creation requests.&#10;  - Added `CreateUrlCommand` with its handler for command execution.&#10;  - Updated Prisma schema with `Url` model and migrations." />
+    <MESSAGE value="Refactor user creation to exclude `cPassword` and handle unsuccessful API responses" />
+    <MESSAGE value="Add original URL retrieval feature to URL shortening service&#10;&#10;- **Backend**:&#10;  - Created `getOriginalUrl` endpoint in `UrlApiController` for retrieving original URLs using shortened codes.&#10;  - Introduced `GetOriginalUrlQuery` and its corresponding handler for query processing within the `Shortener` module.&#10;  - Enhanced `ShortenerService` to handle `GetOriginalUrlQuery` through `QueryBus`.&#10;  - Added error handling for non-existent URLs, returning `NotFoundException` or `InternalServerErrorException` as appropriate." />
+    <MESSAGE value="Add redirect-to-original-URL functionality for shortened codes&#10;&#10;- **Frontend**:&#10;  - Introduced `getOriginalUrl` function in `actions.ts` to fetch original URLs based on shortened codes and perform a permanent redirect.&#10;  - Created `[code]/page.tsx` for handling dynamic route redirection with suspense-based fallback loading state. &#10;- Improved navigation utility by including `permanentRedirect` from `next/navigation`." />
+    <MESSAGE value="Add Redis-based URL caching mechanism to backend&#10;&#10;- **Backend**:&#10;  - Added `UrlCacheService` abstract class and its implementation `AppUrlCacheService` using Redis.&#10;  - Integrated caching in `CreateUrlCommandHandler` to store shortened URLs and their corresponding codes.&#10;  - Enhanced `GetOriginalUrlQueryHandler` to retrieve original URLs from Redis cache before querying the database.&#10;  - Updated `InfrastructureModule` to include Redis-based caching service.&#10;  - Extended `.env-example` with `REDIS_URL` placeholder. &#10;  - Installed `ioredis` for Redis integration and updated dependencies." />
+    <MESSAGE value="Add user-specific URL retrieval with pagination support&#10;&#10;- **Backend**:&#10;  - Created `UserUrlViewRepository` interface and its Prisma-based implementation.&#10;  - Added `GetUsersUrlsQuery` and corresponding query handler.&#10;  - Integrated `getUserUrls` method in `ShortenerService` for query execution.&#10;  - Introduced `GetUserUrlsParamsDto` for handling pagination parameters.&#10;  - Added `getUserUrls` endpoint in `UrlApiController`.&#10;  - Updated `InfrastructureModule` to include `UserUrlViewRepository`." />
+    <MESSAGE value="Add reusable Pagination, Table, and Tooltip components&#10;&#10;- **Frontend**:&#10;  - Implemented reusable `Pagination` component featuring navigation links, ellipsis, and utility functions for page transitions.&#10;  - Developed a modular `Table` component including rows, headers, footer, cells, and caption support.&#10;  - Created a `Tooltip` component utilizing `@radix-ui/react-tooltip` for enhanced user interactivity.&#10;  - Replaced inline copy-to-clipboard logic in `GeneratedUrlPreview` with reusable `CopyToClipboardButton`.&#10;  - Integrated `getUserUrls` with backend support for paginated URLs.&#10;  - Updated dependencies to add support for Radix UI toolkits.&#10;&#10;- **Backend**:&#10;  - Modified actions to include pagination handling using `getUserUrls`.&#10;  - Added `UserUrl` typing and revalidation logic to ensure dynamic updates to paginated data." />
+    <MESSAGE value="Add Skeleton Loader, Pagination, and Empty State for URL List&#10;&#10;- **Frontend**:&#10;  - Added `Skeleton` component for loading placeholders.&#10;  - Implemented `MyPagination` component for user-friendly pagination.&#10;  - Introduced `SkeletonLoader` for list loading state and `NoData` for empty list display.&#10;  - Updated `AppPage` to display paginated and skeleton-based loading states.&#10;  - Enhanced `List` component with dynamic page handling and fallback states using `SELF_URL`." />
+    <MESSAGE value="Simplify pagination logic and remove redundant comments in `pagination.tsx`." />
+    <MESSAGE value="Add analytics and visit tracking models to Prisma schema&#10;&#10;- **Backend**:  &#10;  - Introduced `AnalyticsUrl` and `Vist` models for URL visit tracking.  &#10;  - Added `visitCount` field to `AnalyticsUrl` with a database-level default value.  &#10;  - Implemented `createdAt` timestamps for `Url` and `Vist` for tracking creation times.  &#10;  - Updated Prisma migrations to reflect schema changes.  &#10;  - Created unique index on `AnalyticsUrl.urlId` for efficient lookups." />
+    <MESSAGE value="Add `orderBy` clause to sort user URLs by creation date in descending order" />
+    <MESSAGE value="Add visit tracking and URL analytics features&#10;&#10;- **Backend**:&#10;  - Extended `AnalyticsUrl` model with `uniqueVisitCount` and `ownerId` fields.&#10;  - Added `ownerId` to `Vist` model for user-specific visit tracking.&#10;  - Created value objects and repositories for visit and analytics handling.&#10;  - Integrated event publishing to record URL read events with IP addresses.&#10;  - Implemented Redis-backed queue with BullMQ for analytics processing.&#10;  - Added related migrations, schema updates, and module wiring." />
+    <MESSAGE value="Fix typo in `GetOriginalUrlQueryHandler`: rename `eventEventBus` to `eventBus` for correctness." />
+    <MESSAGE value="Refactor `UrlCacheService` to use `Url` entity instead of raw values and enhance Redis caching logic." />
+    <MESSAGE value="Rename `Vist` to `Visit`, add IP and URL-based unique visit tracking, and improve analytics processing with transactional support&#10;&#10;- **Backend**:&#10;  - Renamed `Vist` to `Visit` in models, schema, and repositories.&#10;  - Extended `Visit` model with combined `ip` and `urlId` unique index.&#10;  - Updated `AnalyticsQueueProcessor` to handle transactional visit and analytics updates.&#10;  - Enhanced `IpAddress` value object to normalize localhost IP addresses.&#10;  - Added `findByUrlId` method to `AnalyticsUrlRepository` for efficient lookups. &#10;&#10;- **Prisma**:&#10;  - Updated database schema with new indexes and renamed models.&#10;  - Added migrations for schema updates reflecting new `Visit` structure and analytics enhancements." />
+    <MESSAGE value="Add transactional support for `save` and `findByUrlId` methods in repositories&#10;&#10;- Updated `VisitRepository` and `AnalyticsUrlRepository` to support optional transaction clients.&#10;- Refactored `PrismaAnalyticsUrlRepository` and `PrismaVisitRepository` to conditionally use transaction clients.&#10;- Modified `AnalyticsQueueProcessor` to use transactional updates for consistency." />
+    <MESSAGE value="Set default value for `page` parameter in `AppPage` component" />
+    <MESSAGE value="Add date-based visit statistics retrieval for analytics API&#10;&#10;- **Backend**:&#10;  - Introduced `getByDateRange` method in `VisitRepository` for filtering visits by date.&#10;  - Added `GetStatisticsQuery` and handler for querying analytics data by date range.&#10;  - Created `AnalyticsService` to handle statistics retrieval logic.&#10;  - Implemented `AnalyticsApiController` endpoint for fetching URL visit statistics.&#10;  - Added `GetStatisticsParamsDto` for validating query parameters.&#10;  - Extended `Visit` and `AnalyticsUrl` models with necessary methods and attributes.&#10;  - Imported and utilized the `date-fns` library for date manipulation and formatting." />
+    <MESSAGE value="Add validation for date ranges in analytics API and enhance statistics retrieval&#10;&#10;- **Backend**:&#10;  - Introduced `WrongDateRangeError` for handling invalid date range queries.&#10;  - Updated `GetStatisticsQueryHandler` to validate and restrict date ranges to a maximum of 30 days.&#10;  - Refined `VisitRepository` and its implementation to use formatted date strings.&#10;  - Improved error handling in `AnalyticsApiController` with specific exceptions for date range and ownership validation.&#10;  &#10;- **Frontend**:&#10;  - Added link navigation for URLs in the `AppPage` component.&#10;  - Created basic template for `UrlDetailsPage` and connected statistics retrieval via `getUrlStatistics`." />
+    <MESSAGE value="Add detailed URL retrieval and statistics endpoints, update Prisma repository methods, and enhance frontend support&#10;&#10;- **Backend**:&#10;  - Added `findById` method in `PrismaUrlRepository` for fetching URLs by ID.&#10;  - Introduced `getUrl` endpoint in `UrlApiController` guarded by `JwtGuard`.&#10;  - Modified `PrismaShortenerService` to construct `Url` entities from Prisma models.&#10;&#10;- **Frontend**:&#10;  - Updated `actions.ts`:&#10;    - Added `getUrlStatistics` function with optional date range filtering.&#10;    - Updated `getUrl` function to handle 404 status with navigation to `notFound`.&#10;    - Renamed and refactored types for clarity (`GetUrlResponse → GetUserUrlsResponse`).&#10;  - Integrated `recharts` library for future data visualization.&#10;&#10;- **Dependencies**:&#10;  - Added `recharts`, `@reduxjs/toolkit`, `react-redux` for front-end enhancements.&#10;  - Introduced `d3` and related types for data manipulation and visualization." />
+    <MESSAGE value="Add date range management, calendar and popover components, and improve API logging&#10;&#10;- **Frontend**:&#10;  - Introduced `Calendar` and `Popover` UI components with customizable styles.&#10;  - Added `DateRange` and `StatsDateRange` components for managing date-based input.&#10;  - Enhanced `actions.ts` with error handling for various HTTP response codes.&#10;  - Installed new dependencies: `react-day-picker`, `date-fns`, and `@radix-ui/react-popover`.&#10;&#10;- **Backend**:&#10;  - Replaced deprecated `IsDate` validator with `IsDateString` in `GetStatisticsParamsDto`.&#10;  - Added `Logger` for enhanced error tracking in API controllers.&#10;  - Refactored API methods to use `async` and `await` consistently.  &#10;&#10;- **Dependencies**:&#10;  - Updated `package-lock.json` to reflect the newly added libraries." />
+    <MESSAGE value="Remove commented-out TODOs related to 400 status handling in `actions.ts`" />
+    <MESSAGE value="Update README with detailed project overview, architecture breakdown, installation steps, and usage instructions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update README with detailed project overview, architecture breakdown, installation steps, and usage instructions" />
+  </component>
+</project>

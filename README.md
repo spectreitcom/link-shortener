@@ -94,7 +94,7 @@ This is a monorepo application built with modern technologies and best practices
 
 This will start:
 - Web app on `http://localhost:3000`
-- API server on `http://localhost:3001`
+- API server on `http://localhost:3003`
 - PostgreSQL on `localhost:5432`
 - Redis on `localhost:6379`
 
@@ -152,27 +152,6 @@ link-shortener-app/
 └── package.json            # Root package configuration
 ```
 
-## 🔌 API Endpoints
-
-### Authentication
-- `POST /auth/sign-up` - Create new user account
-- `POST /auth/sign-in` - User login
-- `POST /auth/logout` - User logout
-
-### URL Management
-- `POST /urls` - Create shortened URL
-- `GET /urls` - Get user's URLs
-- `GET /urls/:id` - Get specific URL details
-- `GET /:code` - Redirect to original URL
-
-### Analytics
-- `GET /analytics/statistics/:urlId` - Get URL statistics
-- `GET /analytics/statistics/:urlId?from=date&to=date` - Get statistics for date range
-
-### Users
-- `GET /users/profile` - Get user profile
-- `PUT /users/profile` - Update user profile
-
 ## 🏃‍♂️ Development Workflow
 
 ### Code Organization
@@ -190,7 +169,6 @@ link-shortener-app/
 - **TypeScript**: Full type safety across the stack
 - **ESLint**: Code linting with consistent rules
 - **Prettier**: Automated code formatting
-- **Jest**: Comprehensive testing suite
 
 ## 🔒 Security Features
 
@@ -200,27 +178,6 @@ link-shortener-app/
 - **SQL Injection Protection**: Prisma ORM with prepared statements
 - **Rate Limiting**: Built-in protection against abuse
 
-## 🚀 Deployment
-
-### Production Build
-```bash
-npm run build
-```
-
-### Environment Variables
-Create `.env` files in respective app directories:
-
-**apps/api/.env**
-```
-DATABASE_URL="postgresql://postgres:postgres@localhost:5432/link_shortener"
-REDIS_URL="redis://localhost:6379"
-JWT_SECRET="your-jwt-secret"
-```
-
-**apps/web/.env.local**
-```
-NEXT_PUBLIC_API_URL="http://localhost:3001"
-```
 
 ## 📊 Performance Features
 
@@ -229,21 +186,9 @@ NEXT_PUBLIC_API_URL="http://localhost:3001"
 - **Database Optimization**: Indexed queries and efficient schemas
 - **Frontend Optimization**: Next.js optimizations and code splitting
 
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
 ## 📝 License
 
 This project is licensed under the UNLICENSED license.
-
-## 🆘 Support
-
-For support, please create an issue in the repository or contact the development team.
 
 ---
 
