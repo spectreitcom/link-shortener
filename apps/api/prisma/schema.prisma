@@ -31,6 +31,8 @@ model Url {
   code        String   @unique
   ownerId     String
   createdAt   DateTime @default(now())
+
+  @@index([code])
 }
 
 // ------------------------------

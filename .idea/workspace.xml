@@ -4,15 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c9bb9721-4cbd-4f9a-94b0-b0c8145e2d52" name="Changes" comment="Update README with detailed project overview, architecture breakdown, installation steps, and usage instructions">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/git_toolbox_prj.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/link-shortener-app.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+    <list default="true" id="c9bb9721-4cbd-4f9a-94b0-b0c8145e2d52" name="Changes" comment="Remove `.idea` folder from the repository and update `.gitignore` to exclude IDE-specific files.">
       <change beforePath="$PROJECT_DIR$/.idea/prettier.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/prettier.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/api/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api/prisma/schema.prisma" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/api/src/gateway/url-api/url-api.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api/src/gateway/url-api/url-api.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/api/src/shortener/application/command-handlers/create-url.command-handler.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api/src/shortener/application/command-handlers/create-url.command-handler.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +25,19 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="develop" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="SET_USER_NAME_GLOBALLY" value="false" />
   </component>
@@ -105,7 +115,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "prettierjs.PrettierConfiguration.Package": "/Users/przemyslawchudzinski/Documents/Personal/Programming/link-shortener-app/node_modules/prettier",
-    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.Color Scheme Font",
+    "settings.editor.selected.configurable": "settings.javascript.prettier",
     "to.speed.mode.migration.done": "true",
     "ts.external.directory.path": "/Users/przemyslawchudzinski/Documents/Personal/Programming/link-shortener-app/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
@@ -170,7 +180,7 @@
       <workItem from="1754524999836" duration="19039000" />
       <workItem from="1754903432571" duration="14229000" />
       <workItem from="1754992833021" duration="6269000" />
-      <workItem from="1754999131376" duration="266000" />
+      <workItem from="1754999131376" duration="1224000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -428,15 +438,21 @@
       <option name="project" value="LOCAL" />
       <updated>1754999001790</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Remove `.idea` folder from the repository and update `.gitignore` to exclude IDE-specific files.">
+      <option name="closed" value="true" />
+      <created>1754999417312</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1754999417312</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add `Navbar` component and app layoutemplate&#10;&#10;- Created a `Navbar` component with session-based user greeting and logout functionality.&#10;- Built a reusable `AppLayout` component integrating the `Navbar`." />
-    <MESSAGE value="Add URL shortening form and validation schema&#10;&#10;- Introduced `ShortUrlForm` component with React Hook Form and Zod schema for URL validation.&#10;- Created `createShortenUrlSchema` for validating URL input.&#10;- Updated app layout to include form with improved styling using container utility." />
     <MESSAGE value="Add URL shortening feature across frontend and backend&#10;&#10;- **Frontend**:&#10;  - Developed `ShortUrlForm` component for creating shortened URLs.&#10;  - Added `GeneratedUrlPreview` component for displaying generated short URLs.&#10;  - Integrated backend API with `createShortenUrl` function.&#10;  - Enhanced `Button` component with loading state.&#10;&#10;- **Backend**:&#10;  - Introduced `Shortener` module with domain-driven architecture.&#10;  - Created `Url` entity with associated value objects and repository.&#10;  - Implemented `UrlApiController` for handling URL creation requests.&#10;  - Added `CreateUrlCommand` with its handler for command execution.&#10;  - Updated Prisma schema with `Url` model and migrations." />
     <MESSAGE value="Refactor user creation to exclude `cPassword` and handle unsuccessful API responses" />
     <MESSAGE value="Add original URL retrieval feature to URL shortening service&#10;&#10;- **Backend**:&#10;  - Created `getOriginalUrl` endpoint in `UrlApiController` for retrieving original URLs using shortened codes.&#10;  - Introduced `GetOriginalUrlQuery` and its corresponding handler for query processing within the `Shortener` module.&#10;  - Enhanced `ShortenerService` to handle `GetOriginalUrlQuery` through `QueryBus`.&#10;  - Added error handling for non-existent URLs, returning `NotFoundException` or `InternalServerErrorException` as appropriate." />
@@ -460,6 +476,8 @@
     <MESSAGE value="Add date range management, calendar and popover components, and improve API logging&#10;&#10;- **Frontend**:&#10;  - Introduced `Calendar` and `Popover` UI components with customizable styles.&#10;  - Added `DateRange` and `StatsDateRange` components for managing date-based input.&#10;  - Enhanced `actions.ts` with error handling for various HTTP response codes.&#10;  - Installed new dependencies: `react-day-picker`, `date-fns`, and `@radix-ui/react-popover`.&#10;&#10;- **Backend**:&#10;  - Replaced deprecated `IsDate` validator with `IsDateString` in `GetStatisticsParamsDto`.&#10;  - Added `Logger` for enhanced error tracking in API controllers.&#10;  - Refactored API methods to use `async` and `await` consistently.  &#10;&#10;- **Dependencies**:&#10;  - Updated `package-lock.json` to reflect the newly added libraries." />
     <MESSAGE value="Remove commented-out TODOs related to 400 status handling in `actions.ts`" />
     <MESSAGE value="Update README with detailed project overview, architecture breakdown, installation steps, and usage instructions" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update README with detailed project overview, architecture breakdown, installation steps, and usage instructions" />
+    <MESSAGE value="Clean up `.idea` directory: remove project-specific configs and unrelated files" />
+    <MESSAGE value="Remove `.idea` folder from the repository and update `.gitignore` to exclude IDE-specific files." />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove `.idea` folder from the repository and update `.gitignore` to exclude IDE-specific files." />
   </component>
 </project>

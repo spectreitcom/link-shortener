@@ -8,10 +8,18 @@ export type CreateUrlCommandResponse = {
   code: string;
 };
 
+export class UniqueCodeGenerationError extends Error {
+  constructor() {
+    super('Failed to generate unique code');
+  }
+}
+
 @CommandHandler(CreateUrlCommand)
 export class CreateUrlCommandHandler
   implements ICommandHandler<CreateUrlCommand, CreateUrlCommandResponse>
 {
+  private readonly maxRetries = 3;
+
   constructor(
     private readonly urlRepository: UrlRepository,
     private readonly urlCacheService: UrlCacheService,
@@ -19,14 +27,29 @@ export class CreateUrlCommandHandler
 
   async execute(command: CreateUrlCommand): Promise<CreateUrlCommandResponse> {
     const { originalUrl, ownerId } = command;
-    const url = Url.create(ownerId, originalUrl);
 
-    // todo: validate generated code
+    let url: Url;
+    let retryCount = 0;
 
-    // save the url to the database
+    do {
+      if (retryCount > this.maxRetries) {
+        throw new UniqueCodeGenerationError();
+      }
+
+      url = Url.create(ownerId, originalUrl);
+
+      const existingUrl = await this.urlRepository.findByCode(url.getCode());
+
+      if (!existingUrl) {
+        break;
+      }
+
+      retryCount++;
+
+      // eslint-disable-next-line no-constant-condition
+    } while (true);
+
     await this.urlRepository.save(url);
-
-    // cache the url
     await this.urlCacheService.cache(url);
 
     return {

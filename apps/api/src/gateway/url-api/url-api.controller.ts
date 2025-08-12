@@ -1,4 +1,5 @@
 import {
+  BadRequestException,
   Body,
   Controller,
   Get,
@@ -19,6 +20,7 @@ import { UrlNotFound } from '../../shortener/application/query-handlers/get-orig
 import { GetUserUrlsParamsDto } from './dtos/get-user-urls-params.dto';
 import { Request } from 'express';
 import { JwtGuard } from '../authentication/guards/jwt.guard';
+import { UniqueCodeGenerationError } from '../../shortener/application/command-handlers/create-url.command-handler';
 
 @Controller('urls')
 export class UrlApiController {
@@ -60,6 +62,8 @@ export class UrlApiController {
     } catch (e) {
       if (e instanceof UrlNotFound) {
         throw new NotFoundException(e.message);
+      } else if (e instanceof UniqueCodeGenerationError) {
+        throw new BadRequestException(e.message);
       } else {
         throw new InternalServerErrorException();
       }
