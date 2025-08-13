@@ -4,7 +4,6 @@ import {
   createShortenUrlSchema,
   CreateShortenUrlSchema,
 } from "@/features/app/schemas";
-import { z } from "zod";
 import { BACKEND_URL } from "@/lib/constants";
 import { redirect, permanentRedirect, notFound } from "next/navigation";
 import { getSession } from "@/lib/session";
@@ -19,7 +18,7 @@ export async function createShortenUrl(payload: CreateShortenUrlSchema) {
   const session = await getSession();
   if (!session) redirect("/api/auth/logout");
 
-  const validationRes = z.safeParse(createShortenUrlSchema, payload);
+  const validationRes = createShortenUrlSchema.safeParse(payload);
   if (!validationRes.success) return { error: true };
 
   const response = await fetch(`${BACKEND_URL}/urls`, {

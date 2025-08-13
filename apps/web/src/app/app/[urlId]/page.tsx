@@ -7,6 +7,7 @@ import { ChevronLeftIcon } from "lucide-react";
 import { DateRange } from "@/features/app/components/date-range";
 import { Suspense } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
+import { SELF_URL } from "@/lib/constants";
 
 type Props = {
   params: Promise<{ urlId: string }>;
@@ -80,7 +81,7 @@ async function Content({ params, searchParams }: Props) {
           </Link>
         </Button>
         <h3 className={"text-3xl font-bold"}>
-          http://localhost:3000/{urlData.code}
+          {SELF_URL}/{urlData.code}
         </h3>
       </div>
 

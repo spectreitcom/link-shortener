@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c9bb9721-4cbd-4f9a-94b0-b0c8145e2d52" name="Changes" comment="Add `DatePicker` and `DateRange` components with date filtering for URL statistics&#10;&#10;- **Frontend**:&#10;  - Created `DatePicker` component for selecting individual dates.&#10;  - Introduced `DateRange` component for filtering statistics by start and end dates.&#10;  - Enhanced `UrlDetailsPage` to pass date filters to the stats API and include the new `DateRange` component.&#10;  - Updated `actions.ts` to handle independent `fromDate` and `endDate` params.&#10;&#10;- **Backend**:&#10;  - Modified `getUrlStatistics` to support filtered requests with `fromDate` and `endDate`.">
+    <list default="true" id="c9bb9721-4cbd-4f9a-94b0-b0c8145e2d52" name="Changes" comment="Add suspense-based skeleton loader to `UrlDetailsPage` for improved UX during data fetch&#10;&#10;- **Frontend**:&#10;  - Introduced `Suspense` with a fallback skeleton loader in `UrlDetailsPage` for better loading experience.&#10;  - Added `SkeletonLoader` component to provide placeholders for page elements like header, stats, charts, and date range.">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/web/src/app/app/[urlId]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/web/src/app/app/[urlId]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/web/src/features/app/actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/web/src/features/app/actions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/web/src/features/auth/actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/web/src/features/auth/actions.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,7 +181,7 @@
       <workItem from="1754903432571" duration="14229000" />
       <workItem from="1754992833021" duration="6269000" />
       <workItem from="1754999131376" duration="2650000" />
-      <workItem from="1755079712706" duration="6116000" />
+      <workItem from="1755079712706" duration="7849000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -468,14 +471,21 @@
       <option name="project" value="LOCAL" />
       <updated>1755085590685</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Add suspense-based skeleton loader to `UrlDetailsPage` for improved UX during data fetch&#10;&#10;- **Frontend**:&#10;  - Introduced `Suspense` with a fallback skeleton loader in `UrlDetailsPage` for better loading experience.&#10;  - Added `SkeletonLoader` component to provide placeholders for page elements like header, stats, charts, and date range.">
+      <option name="closed" value="true" />
+      <created>1755085952699</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1755085952699</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add redirect-to-original-URL functionality for shortened codes&#10;&#10;- **Frontend**:&#10;  - Introduced `getOriginalUrl` function in `actions.ts` to fetch original URLs based on shortened codes and perform a permanent redirect.&#10;  - Created `[code]/page.tsx` for handling dynamic route redirection with suspense-based fallback loading state. &#10;- Improved navigation utility by including `permanentRedirect` from `next/navigation`." />
     <MESSAGE value="Add Redis-based URL caching mechanism to backend&#10;&#10;- **Backend**:&#10;  - Added `UrlCacheService` abstract class and its implementation `AppUrlCacheService` using Redis.&#10;  - Integrated caching in `CreateUrlCommandHandler` to store shortened URLs and their corresponding codes.&#10;  - Enhanced `GetOriginalUrlQueryHandler` to retrieve original URLs from Redis cache before querying the database.&#10;  - Updated `InfrastructureModule` to include Redis-based caching service.&#10;  - Extended `.env-example` with `REDIS_URL` placeholder. &#10;  - Installed `ioredis` for Redis integration and updated dependencies." />
     <MESSAGE value="Add user-specific URL retrieval with pagination support&#10;&#10;- **Backend**:&#10;  - Created `UserUrlViewRepository` interface and its Prisma-based implementation.&#10;  - Added `GetUsersUrlsQuery` and corresponding query handler.&#10;  - Integrated `getUserUrls` method in `ShortenerService` for query execution.&#10;  - Introduced `GetUserUrlsParamsDto` for handling pagination parameters.&#10;  - Added `getUserUrls` endpoint in `UrlApiController`.&#10;  - Updated `InfrastructureModule` to include `UserUrlViewRepository`." />
     <MESSAGE value="Add reusable Pagination, Table, and Tooltip components&#10;&#10;- **Frontend**:&#10;  - Implemented reusable `Pagination` component featuring navigation links, ellipsis, and utility functions for page transitions.&#10;  - Developed a modular `Table` component including rows, headers, footer, cells, and caption support.&#10;  - Created a `Tooltip` component utilizing `@radix-ui/react-tooltip` for enhanced user interactivity.&#10;  - Replaced inline copy-to-clipboard logic in `GeneratedUrlPreview` with reusable `CopyToClipboardButton`.&#10;  - Integrated `getUserUrls` with backend support for paginated URLs.&#10;  - Updated dependencies to add support for Radix UI toolkits.&#10;&#10;- **Backend**:&#10;  - Modified actions to include pagination handling using `getUserUrls`.&#10;  - Added `UserUrl` typing and revalidation logic to ensure dynamic updates to paginated data." />
@@ -500,6 +510,7 @@
     <MESSAGE value="Enhance URL creation process and error handling:&#10;&#10;- **Backend**:&#10;  - Introduced `UniqueCodeGenerationError` for handling code collision retries.&#10;  - Added retry logic with a maximum of 3 attempts for unique code generation in `CreateUrlCommandHandler`.&#10;  - Updated `UrlApiController` to handle `UniqueCodeGenerationError` with `BadRequestException`.&#10;  - Added an index on the `code` field of the `Url` model for improved query performance. &#10;&#10;- **IDE Configurations**:&#10;  - Updated `.idea` Prettier settings: enabled manual configuration and run-on-save feature.&#10;  - Added project-specific Git settings and tasks." />
     <MESSAGE value="Remove `DateRange` and `StatsDateRange` components from the frontend." />
     <MESSAGE value="Add `DatePicker` and `DateRange` components with date filtering for URL statistics&#10;&#10;- **Frontend**:&#10;  - Created `DatePicker` component for selecting individual dates.&#10;  - Introduced `DateRange` component for filtering statistics by start and end dates.&#10;  - Enhanced `UrlDetailsPage` to pass date filters to the stats API and include the new `DateRange` component.&#10;  - Updated `actions.ts` to handle independent `fromDate` and `endDate` params.&#10;&#10;- **Backend**:&#10;  - Modified `getUrlStatistics` to support filtered requests with `fromDate` and `endDate`." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add `DatePicker` and `DateRange` components with date filtering for URL statistics&#10;&#10;- **Frontend**:&#10;  - Created `DatePicker` component for selecting individual dates.&#10;  - Introduced `DateRange` component for filtering statistics by start and end dates.&#10;  - Enhanced `UrlDetailsPage` to pass date filters to the stats API and include the new `DateRange` component.&#10;  - Updated `actions.ts` to handle independent `fromDate` and `endDate` params.&#10;&#10;- **Backend**:&#10;  - Modified `getUrlStatistics` to support filtered requests with `fromDate` and `endDate`." />
+    <MESSAGE value="Add suspense-based skeleton loader to `UrlDetailsPage` for improved UX during data fetch&#10;&#10;- **Frontend**:&#10;  - Introduced `Suspense` with a fallback skeleton loader in `UrlDetailsPage` for better loading experience.&#10;  - Added `SkeletonLoader` component to provide placeholders for page elements like header, stats, charts, and date range." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add suspense-based skeleton loader to `UrlDetailsPage` for improved UX during data fetch&#10;&#10;- **Frontend**:&#10;  - Introduced `Suspense` with a fallback skeleton loader in `UrlDetailsPage` for better loading experience.&#10;  - Added `SkeletonLoader` component to provide placeholders for page elements like header, stats, charts, and date range." />
   </component>
 </project>

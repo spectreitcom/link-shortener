@@ -7,14 +7,13 @@ import {
   SignInSchema,
 } from "@/features/auth/schemas";
 import { BACKEND_URL } from "@/lib/constants";
-import { z } from "zod";
 import { redirect } from "next/navigation";
 import { SignInResponse } from "@/features/auth/types";
 import { revalidatePath } from "next/cache";
 import { createSession } from "@/lib/session";
 
 export async function createUser(payload: CreateUserSchema) {
-  const validationRes = z.safeParse(createUserSchema, payload);
+  const validationRes = createUserSchema.safeParse(payload);
 
   if (!validationRes.success) return { error: true };
 
@@ -34,7 +33,7 @@ export async function createUser(payload: CreateUserSchema) {
 }
 
 export async function login(payload: SignInSchema) {
-  const validationRes = z.safeParse(signInSchema, payload);
+  const validationRes = signInSchema.safeParse(payload);
   if (!validationRes.success) return { error: true };
 
   const response = await fetch(`${BACKEND_URL}/auth/login`, {
