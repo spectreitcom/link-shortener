@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c9bb9721-4cbd-4f9a-94b0-b0c8145e2d52" name="Changes" comment="Remove `JwtGuard` usage from `UrlApiController` and `AnalyticsApiController` endpoints to simplify authentication handling." />
+    <list default="true" id="c9bb9721-4cbd-4f9a-94b0-b0c8145e2d52" name="Changes" comment="Add `helmet` for enhanced security and implement request throttling with `ThrottlerGuard`&#10;&#10;- **Backend**:&#10;  - Integrated `helmet` middleware to improve HTTP headers-based security.&#10;  - Configured global request throttling with `ThrottlerModule` and `ThrottlerGuard` to limit requests per minute.&#10;  - Updated dependencies in `package.json` and `package-lock.json` with `@nestjs/throttler` and `helmet`." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -175,7 +175,7 @@
       <workItem from="1754903432571" duration="14229000" />
       <workItem from="1754992833021" duration="6269000" />
       <workItem from="1754999131376" duration="2650000" />
-      <workItem from="1755079712706" duration="8358000" />
+      <workItem from="1755079712706" duration="8915000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -489,14 +489,21 @@
       <option name="project" value="LOCAL" />
       <updated>1755087791209</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Add `helmet` for enhanced security and implement request throttling with `ThrottlerGuard`&#10;&#10;- **Backend**:&#10;  - Integrated `helmet` middleware to improve HTTP headers-based security.&#10;  - Configured global request throttling with `ThrottlerModule` and `ThrottlerGuard` to limit requests per minute.&#10;  - Updated dependencies in `package.json` and `package-lock.json` with `@nestjs/throttler` and `helmet`.">
+      <option name="closed" value="true" />
+      <created>1755088254033</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1755088254033</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add reusable Pagination, Table, and Tooltip components&#10;&#10;- **Frontend**:&#10;  - Implemented reusable `Pagination` component featuring navigation links, ellipsis, and utility functions for page transitions.&#10;  - Developed a modular `Table` component including rows, headers, footer, cells, and caption support.&#10;  - Created a `Tooltip` component utilizing `@radix-ui/react-tooltip` for enhanced user interactivity.&#10;  - Replaced inline copy-to-clipboard logic in `GeneratedUrlPreview` with reusable `CopyToClipboardButton`.&#10;  - Integrated `getUserUrls` with backend support for paginated URLs.&#10;  - Updated dependencies to add support for Radix UI toolkits.&#10;&#10;- **Backend**:&#10;  - Modified actions to include pagination handling using `getUserUrls`.&#10;  - Added `UserUrl` typing and revalidation logic to ensure dynamic updates to paginated data." />
     <MESSAGE value="Add Skeleton Loader, Pagination, and Empty State for URL List&#10;&#10;- **Frontend**:&#10;  - Added `Skeleton` component for loading placeholders.&#10;  - Implemented `MyPagination` component for user-friendly pagination.&#10;  - Introduced `SkeletonLoader` for list loading state and `NoData` for empty list display.&#10;  - Updated `AppPage` to display paginated and skeleton-based loading states.&#10;  - Enhanced `List` component with dynamic page handling and fallback states using `SELF_URL`." />
     <MESSAGE value="Simplify pagination logic and remove redundant comments in `pagination.tsx`." />
     <MESSAGE value="Add analytics and visit tracking models to Prisma schema&#10;&#10;- **Backend**:  &#10;  - Introduced `AnalyticsUrl` and `Vist` models for URL visit tracking.  &#10;  - Added `visitCount` field to `AnalyticsUrl` with a database-level default value.  &#10;  - Implemented `createdAt` timestamps for `Url` and `Vist` for tracking creation times.  &#10;  - Updated Prisma migrations to reflect schema changes.  &#10;  - Created unique index on `AnalyticsUrl.urlId` for efficient lookups." />
@@ -521,6 +528,7 @@
     <MESSAGE value="Add suspense-based skeleton loader to `UrlDetailsPage` for improved UX during data fetch&#10;&#10;- **Frontend**:&#10;  - Introduced `Suspense` with a fallback skeleton loader in `UrlDetailsPage` for better loading experience.&#10;  - Added `SkeletonLoader` component to provide placeholders for page elements like header, stats, charts, and date range." />
     <MESSAGE value="Refactor schema validation in `actions.ts` to use schema's `safeParse` method directly and remove unused `z` imports" />
     <MESSAGE value="Remove `JwtGuard` usage from `UrlApiController` and `AnalyticsApiController` endpoints to simplify authentication handling." />
-    <option name="LAST_COMMIT_MESSAGE" value="Remove `JwtGuard` usage from `UrlApiController` and `AnalyticsApiController` endpoints to simplify authentication handling." />
+    <MESSAGE value="Add `helmet` for enhanced security and implement request throttling with `ThrottlerGuard`&#10;&#10;- **Backend**:&#10;  - Integrated `helmet` middleware to improve HTTP headers-based security.&#10;  - Configured global request throttling with `ThrottlerModule` and `ThrottlerGuard` to limit requests per minute.&#10;  - Updated dependencies in `package.json` and `package-lock.json` with `@nestjs/throttler` and `helmet`." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add `helmet` for enhanced security and implement request throttling with `ThrottlerGuard`&#10;&#10;- **Backend**:&#10;  - Integrated `helmet` middleware to improve HTTP headers-based security.&#10;  - Configured global request throttling with `ThrottlerModule` and `ThrottlerGuard` to limit requests per minute.&#10;  - Updated dependencies in `package.json` and `package-lock.json` with `@nestjs/throttler` and `helmet`." />
   </component>
 </project>
