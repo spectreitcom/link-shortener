@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c9bb9721-4cbd-4f9a-94b0-b0c8145e2d52" name="Changes" comment="Remove `.idea` folder from the repository and update `.gitignore` to exclude IDE-specific files.">
-      <change beforePath="$PROJECT_DIR$/.idea/prettier.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/prettier.xml" afterDir="false" />
+    <list default="true" id="c9bb9721-4cbd-4f9a-94b0-b0c8145e2d52" name="Changes" comment="Remove `DateRange` and `StatsDateRange` components from the frontend.">
+      <change afterPath="$PROJECT_DIR$/apps/web/src/components/date-picker.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/web/src/features/app/components/date-range.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/api/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api/prisma/schema.prisma" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/api/src/gateway/url-api/url-api.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api/src/gateway/url-api/url-api.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/api/src/shortener/application/command-handlers/create-url.command-handler.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api/src/shortener/application/command-handlers/create-url.command-handler.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/web/src/app/app/[urlId]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/web/src/app/app/[urlId]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/web/src/features/app/actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/web/src/features/app/actions.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +115,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "prettierjs.PrettierConfiguration.Package": "/Users/przemyslawchudzinski/Documents/Personal/Programming/link-shortener-app/node_modules/prettier",
-    "settings.editor.selected.configurable": "settings.javascript.prettier",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
     "to.speed.mode.migration.done": "true",
     "ts.external.directory.path": "/Users/przemyslawchudzinski/Documents/Personal/Programming/link-shortener-app/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
@@ -180,7 +180,8 @@
       <workItem from="1754524999836" duration="19039000" />
       <workItem from="1754903432571" duration="14229000" />
       <workItem from="1754992833021" duration="6269000" />
-      <workItem from="1754999131376" duration="1224000" />
+      <workItem from="1754999131376" duration="2650000" />
+      <workItem from="1755079712706" duration="5839000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -446,15 +447,29 @@
       <option name="project" value="LOCAL" />
       <updated>1754999417312</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Enhance URL creation process and error handling:&#10;&#10;- **Backend**:&#10;  - Introduced `UniqueCodeGenerationError` for handling code collision retries.&#10;  - Added retry logic with a maximum of 3 attempts for unique code generation in `CreateUrlCommandHandler`.&#10;  - Updated `UrlApiController` to handle `UniqueCodeGenerationError` with `BadRequestException`.&#10;  - Added an index on the `code` field of the `Url` model for improved query performance. &#10;&#10;- **IDE Configurations**:&#10;  - Updated `.idea` Prettier settings: enabled manual configuration and run-on-save feature.&#10;  - Added project-specific Git settings and tasks.">
+      <option name="closed" value="true" />
+      <created>1755000420603</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1755000420603</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Remove `DateRange` and `StatsDateRange` components from the frontend.">
+      <option name="closed" value="true" />
+      <created>1755000609930</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1755000609930</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add URL shortening feature across frontend and backend&#10;&#10;- **Frontend**:&#10;  - Developed `ShortUrlForm` component for creating shortened URLs.&#10;  - Added `GeneratedUrlPreview` component for displaying generated short URLs.&#10;  - Integrated backend API with `createShortenUrl` function.&#10;  - Enhanced `Button` component with loading state.&#10;&#10;- **Backend**:&#10;  - Introduced `Shortener` module with domain-driven architecture.&#10;  - Created `Url` entity with associated value objects and repository.&#10;  - Implemented `UrlApiController` for handling URL creation requests.&#10;  - Added `CreateUrlCommand` with its handler for command execution.&#10;  - Updated Prisma schema with `Url` model and migrations." />
-    <MESSAGE value="Refactor user creation to exclude `cPassword` and handle unsuccessful API responses" />
     <MESSAGE value="Add original URL retrieval feature to URL shortening service&#10;&#10;- **Backend**:&#10;  - Created `getOriginalUrl` endpoint in `UrlApiController` for retrieving original URLs using shortened codes.&#10;  - Introduced `GetOriginalUrlQuery` and its corresponding handler for query processing within the `Shortener` module.&#10;  - Enhanced `ShortenerService` to handle `GetOriginalUrlQuery` through `QueryBus`.&#10;  - Added error handling for non-existent URLs, returning `NotFoundException` or `InternalServerErrorException` as appropriate." />
     <MESSAGE value="Add redirect-to-original-URL functionality for shortened codes&#10;&#10;- **Frontend**:&#10;  - Introduced `getOriginalUrl` function in `actions.ts` to fetch original URLs based on shortened codes and perform a permanent redirect.&#10;  - Created `[code]/page.tsx` for handling dynamic route redirection with suspense-based fallback loading state. &#10;- Improved navigation utility by including `permanentRedirect` from `next/navigation`." />
     <MESSAGE value="Add Redis-based URL caching mechanism to backend&#10;&#10;- **Backend**:&#10;  - Added `UrlCacheService` abstract class and its implementation `AppUrlCacheService` using Redis.&#10;  - Integrated caching in `CreateUrlCommandHandler` to store shortened URLs and their corresponding codes.&#10;  - Enhanced `GetOriginalUrlQueryHandler` to retrieve original URLs from Redis cache before querying the database.&#10;  - Updated `InfrastructureModule` to include Redis-based caching service.&#10;  - Extended `.env-example` with `REDIS_URL` placeholder. &#10;  - Installed `ioredis` for Redis integration and updated dependencies." />
@@ -478,6 +493,8 @@
     <MESSAGE value="Update README with detailed project overview, architecture breakdown, installation steps, and usage instructions" />
     <MESSAGE value="Clean up `.idea` directory: remove project-specific configs and unrelated files" />
     <MESSAGE value="Remove `.idea` folder from the repository and update `.gitignore` to exclude IDE-specific files." />
-    <option name="LAST_COMMIT_MESSAGE" value="Remove `.idea` folder from the repository and update `.gitignore` to exclude IDE-specific files." />
+    <MESSAGE value="Enhance URL creation process and error handling:&#10;&#10;- **Backend**:&#10;  - Introduced `UniqueCodeGenerationError` for handling code collision retries.&#10;  - Added retry logic with a maximum of 3 attempts for unique code generation in `CreateUrlCommandHandler`.&#10;  - Updated `UrlApiController` to handle `UniqueCodeGenerationError` with `BadRequestException`.&#10;  - Added an index on the `code` field of the `Url` model for improved query performance. &#10;&#10;- **IDE Configurations**:&#10;  - Updated `.idea` Prettier settings: enabled manual configuration and run-on-save feature.&#10;  - Added project-specific Git settings and tasks." />
+    <MESSAGE value="Remove `DateRange` and `StatsDateRange` components from the frontend." />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove `DateRange` and `StatsDateRange` components from the frontend." />
   </component>
 </project>

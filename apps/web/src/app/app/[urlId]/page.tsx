@@ -4,16 +4,19 @@ import { StatisticsChart } from "@/features/app/components/statistics-chart";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { ChevronLeftIcon } from "lucide-react";
+import { DateRange } from "@/features/app/components/date-range";
 
 type Props = {
   params: Promise<{ urlId: string }>;
+  searchParams: Promise<{ fromDate?: string; endDate?: string }>;
 };
 
-export default async function UrlDetailsPage({ params }: Props) {
+export default async function UrlDetailsPage({ params, searchParams }: Props) {
   const { urlId } = await params;
+  const { fromDate, endDate } = await searchParams;
 
   const urlData = await getUrl(urlId);
-  const stats = await getUrlStatistics(urlId);
+  const stats = await getUrlStatistics(urlId, fromDate, endDate);
 
   return (
     <div>
@@ -32,6 +35,8 @@ export default async function UrlDetailsPage({ params }: Props) {
         uniqueVisitCount={stats.uniqueVisitCount}
         visitCount={stats.visitCount}
       />
+
+      <DateRange startDate={fromDate} endDate={endDate} urlId={urlId} />
 
       <StatisticsChart visits={stats.visits} />
     </div>

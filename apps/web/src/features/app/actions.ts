@@ -106,8 +106,12 @@ export async function getUrlStatistics(
   if (!session) redirect("/api/auth/logout");
 
   const searchParams = new URLSearchParams();
-  if (fromDate && endDate) {
+
+  if (fromDate) {
     searchParams.set("fromDate", fromDate);
+  }
+
+  if (endDate) {
     searchParams.set("endDate", endDate);
   }
 
