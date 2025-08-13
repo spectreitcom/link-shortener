@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c9bb9721-4cbd-4f9a-94b0-b0c8145e2d52" name="Changes" comment="Refactor schema validation in `actions.ts` to use schema's `safeParse` method directly and remove unused `z` imports">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/api/src/gateway/analytics-api/analytics-api.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api/src/gateway/analytics-api/analytics-api.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/api/src/gateway/url-api/url-api.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api/src/gateway/url-api/url-api.controller.ts" afterDir="false" />
-    </list>
+    <list default="true" id="c9bb9721-4cbd-4f9a-94b0-b0c8145e2d52" name="Changes" comment="Remove `JwtGuard` usage from `UrlApiController` and `AnalyticsApiController` endpoints to simplify authentication handling." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -179,7 +175,7 @@
       <workItem from="1754903432571" duration="14229000" />
       <workItem from="1754992833021" duration="6269000" />
       <workItem from="1754999131376" duration="2650000" />
-      <workItem from="1755079712706" duration="8000000" />
+      <workItem from="1755079712706" duration="8358000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -485,14 +481,21 @@
       <option name="project" value="LOCAL" />
       <updated>1755087634178</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Remove `JwtGuard` usage from `UrlApiController` and `AnalyticsApiController` endpoints to simplify authentication handling.">
+      <option name="closed" value="true" />
+      <created>1755087791209</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1755087791209</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add user-specific URL retrieval with pagination support&#10;&#10;- **Backend**:&#10;  - Created `UserUrlViewRepository` interface and its Prisma-based implementation.&#10;  - Added `GetUsersUrlsQuery` and corresponding query handler.&#10;  - Integrated `getUserUrls` method in `ShortenerService` for query execution.&#10;  - Introduced `GetUserUrlsParamsDto` for handling pagination parameters.&#10;  - Added `getUserUrls` endpoint in `UrlApiController`.&#10;  - Updated `InfrastructureModule` to include `UserUrlViewRepository`." />
     <MESSAGE value="Add reusable Pagination, Table, and Tooltip components&#10;&#10;- **Frontend**:&#10;  - Implemented reusable `Pagination` component featuring navigation links, ellipsis, and utility functions for page transitions.&#10;  - Developed a modular `Table` component including rows, headers, footer, cells, and caption support.&#10;  - Created a `Tooltip` component utilizing `@radix-ui/react-tooltip` for enhanced user interactivity.&#10;  - Replaced inline copy-to-clipboard logic in `GeneratedUrlPreview` with reusable `CopyToClipboardButton`.&#10;  - Integrated `getUserUrls` with backend support for paginated URLs.&#10;  - Updated dependencies to add support for Radix UI toolkits.&#10;&#10;- **Backend**:&#10;  - Modified actions to include pagination handling using `getUserUrls`.&#10;  - Added `UserUrl` typing and revalidation logic to ensure dynamic updates to paginated data." />
     <MESSAGE value="Add Skeleton Loader, Pagination, and Empty State for URL List&#10;&#10;- **Frontend**:&#10;  - Added `Skeleton` component for loading placeholders.&#10;  - Implemented `MyPagination` component for user-friendly pagination.&#10;  - Introduced `SkeletonLoader` for list loading state and `NoData` for empty list display.&#10;  - Updated `AppPage` to display paginated and skeleton-based loading states.&#10;  - Enhanced `List` component with dynamic page handling and fallback states using `SELF_URL`." />
     <MESSAGE value="Simplify pagination logic and remove redundant comments in `pagination.tsx`." />
@@ -517,6 +520,7 @@
     <MESSAGE value="Add `DatePicker` and `DateRange` components with date filtering for URL statistics&#10;&#10;- **Frontend**:&#10;  - Created `DatePicker` component for selecting individual dates.&#10;  - Introduced `DateRange` component for filtering statistics by start and end dates.&#10;  - Enhanced `UrlDetailsPage` to pass date filters to the stats API and include the new `DateRange` component.&#10;  - Updated `actions.ts` to handle independent `fromDate` and `endDate` params.&#10;&#10;- **Backend**:&#10;  - Modified `getUrlStatistics` to support filtered requests with `fromDate` and `endDate`." />
     <MESSAGE value="Add suspense-based skeleton loader to `UrlDetailsPage` for improved UX during data fetch&#10;&#10;- **Frontend**:&#10;  - Introduced `Suspense` with a fallback skeleton loader in `UrlDetailsPage` for better loading experience.&#10;  - Added `SkeletonLoader` component to provide placeholders for page elements like header, stats, charts, and date range." />
     <MESSAGE value="Refactor schema validation in `actions.ts` to use schema's `safeParse` method directly and remove unused `z` imports" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor schema validation in `actions.ts` to use schema's `safeParse` method directly and remove unused `z` imports" />
+    <MESSAGE value="Remove `JwtGuard` usage from `UrlApiController` and `AnalyticsApiController` endpoints to simplify authentication handling." />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove `JwtGuard` usage from `UrlApiController` and `AnalyticsApiController` endpoints to simplify authentication handling." />
   </component>
 </project>
