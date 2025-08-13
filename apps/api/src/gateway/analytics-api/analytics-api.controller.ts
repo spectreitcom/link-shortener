@@ -7,10 +7,8 @@ import {
   Logger,
   Param,
   Query,
-  UseGuards,
 } from '@nestjs/common';
 import { AnalyticsService } from '../../analytics/application/analytics.service';
-import { JwtGuard } from '../authentication/guards/jwt.guard';
 import { CurrentUser } from '../authentication/decorators/current-user.decorator';
 import { ValidatedUser } from '../authentication/types';
 import { GetStatisticsParamsDto } from './dtos/get-statistics-params.dto';
@@ -25,7 +23,6 @@ export class AnalyticsApiController {
 
   constructor(private readonly analyticsService: AnalyticsService) {}
 
-  @UseGuards(JwtGuard)
   @Get(':urlId')
   async getStatistics(
     @CurrentUser() user: ValidatedUser,

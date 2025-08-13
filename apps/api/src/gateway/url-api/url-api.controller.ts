@@ -9,7 +9,6 @@ import {
   Post,
   Query,
   Req,
-  UseGuards,
 } from '@nestjs/common';
 import { ShortenerService } from '../../shortener/application/shortener.service';
 import { CreateShortUrlDto } from './dtos/create-short-url.dto';
@@ -19,7 +18,6 @@ import { Public } from '../authentication/decorators/public.decorator';
 import { UrlNotFound } from '../../shortener/application/query-handlers/get-original-url.query-handler';
 import { GetUserUrlsParamsDto } from './dtos/get-user-urls-params.dto';
 import { Request } from 'express';
-import { JwtGuard } from '../authentication/guards/jwt.guard';
 import { UniqueCodeGenerationError } from '../../shortener/application/command-handlers/create-url.command-handler';
 
 @Controller('urls')
@@ -42,7 +40,6 @@ export class UrlApiController {
     return await this.shortenerService.getUserUrls(user.id, searchParams.page);
   }
 
-  @UseGuards(JwtGuard)
   @Get('object/:urlId')
   async getUrl(
     @Param('urlId') urlId: string,
