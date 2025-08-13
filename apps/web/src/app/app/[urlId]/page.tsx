@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { ChevronLeftIcon } from "lucide-react";
 import { DateRange } from "@/features/app/components/date-range";
+import { Suspense } from "react";
+import { Skeleton } from "@/components/ui/skeleton";
 
 type Props = {
   params: Promise<{ urlId: string }>;
@@ -12,6 +14,57 @@ type Props = {
 };
 
 export default async function UrlDetailsPage({ params, searchParams }: Props) {
+  return (
+    <Suspense fallback={<SkeletonLoader />}>
+      <Content params={params} searchParams={searchParams} />
+    </Suspense>
+  );
+}
+
+function SkeletonLoader() {
+  return (
+    <div>
+      {/* Header with back button and title */}
+      <div className={"flex items-center gap-4"}>
+        <Skeleton className="h-10 w-10" />
+        <Skeleton className="h-8 w-80" />
+      </div>
+
+      {/* Basic Stats Cards */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+        <Card>
+          <CardHeader>
+            <Skeleton className="h-6 w-24" />
+          </CardHeader>
+          <CardContent>
+            <Skeleton className="h-8 w-16" />
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardHeader>
+            <Skeleton className="h-6 w-28" />
+          </CardHeader>
+          <CardContent>
+            <Skeleton className="h-8 w-16" />
+          </CardContent>
+        </Card>
+      </div>
+
+      {/* Date Range Component */}
+      <div className="mt-8">
+        <Skeleton className="h-10 w-64" />
+      </div>
+
+      {/* Statistics Chart */}
+      <div className="mt-8">
+        <Skeleton className="h-80 w-full" />
+      </div>
+    </div>
+  );
+}
+
+async function Content({ params, searchParams }: Props) {
   const { urlId } = await params;
   const { fromDate, endDate } = await searchParams;
 
