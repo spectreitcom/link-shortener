@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c9bb9721-4cbd-4f9a-94b0-b0c8145e2d52" name="Changes" comment="Add `helmet` for enhanced security and implement request throttling with `ThrottlerGuard`&#10;&#10;- **Backend**:&#10;  - Integrated `helmet` middleware to improve HTTP headers-based security.&#10;  - Configured global request throttling with `ThrottlerModule` and `ThrottlerGuard` to limit requests per minute.&#10;  - Updated dependencies in `package.json` and `package-lock.json` with `@nestjs/throttler` and `helmet`." />
+    <list default="true" id="c9bb9721-4cbd-4f9a-94b0-b0c8145e2d52" name="Changes" comment="Update `.idea/workspace.xml` with task details for recent backend security updates and throttling implementation.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/web/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/web/src/app/layout.tsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -90,36 +93,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "HTTP Request.generated-requests | #1.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "develop",
-    "javascript.nodejs.core.library.configured.version": "24.4.1",
-    "javascript.nodejs.core.library.typings.version": "24.2.0",
-    "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "/Users/przemyslawchudzinski/Documents/Personal/Programming/link-shortener-app/apps/api/src/shortener/application/query-handlers",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "prettierjs.PrettierConfiguration.Package": "/Users/przemyslawchudzinski/Documents/Personal/Programming/link-shortener-app/node_modules/prettier",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "to.speed.mode.migration.done": "true",
-    "ts.external.directory.path": "/Users/przemyslawchudzinski/Documents/Personal/Programming/link-shortener-app/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;HTTP Request.generated-requests | #1.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
+    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;24.4.1&quot;,
+    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;24.2.0&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/przemyslawchudzinski/Documents/Personal/Programming/link-shortener-app/apps/api/src/shortener/application/query-handlers&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/przemyslawchudzinski/Documents/Personal/Programming/link-shortener-app/node_modules/prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/przemyslawchudzinski/Documents/Personal/Programming/link-shortener-app/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="ReactDesignerToolWindowState">
     <option name="myId2Visible">
       <map>
@@ -175,7 +178,8 @@
       <workItem from="1754903432571" duration="14229000" />
       <workItem from="1754992833021" duration="6269000" />
       <workItem from="1754999131376" duration="2650000" />
-      <workItem from="1755079712706" duration="8915000" />
+      <workItem from="1755079712706" duration="8938000" />
+      <workItem from="1755164795665" duration="526000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -497,14 +501,21 @@
       <option name="project" value="LOCAL" />
       <updated>1755088254033</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="Update `.idea/workspace.xml` with task details for recent backend security updates and throttling implementation.">
+      <option name="closed" value="true" />
+      <created>1755088691085</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1755088691085</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add Skeleton Loader, Pagination, and Empty State for URL List&#10;&#10;- **Frontend**:&#10;  - Added `Skeleton` component for loading placeholders.&#10;  - Implemented `MyPagination` component for user-friendly pagination.&#10;  - Introduced `SkeletonLoader` for list loading state and `NoData` for empty list display.&#10;  - Updated `AppPage` to display paginated and skeleton-based loading states.&#10;  - Enhanced `List` component with dynamic page handling and fallback states using `SELF_URL`." />
     <MESSAGE value="Simplify pagination logic and remove redundant comments in `pagination.tsx`." />
     <MESSAGE value="Add analytics and visit tracking models to Prisma schema&#10;&#10;- **Backend**:  &#10;  - Introduced `AnalyticsUrl` and `Vist` models for URL visit tracking.  &#10;  - Added `visitCount` field to `AnalyticsUrl` with a database-level default value.  &#10;  - Implemented `createdAt` timestamps for `Url` and `Vist` for tracking creation times.  &#10;  - Updated Prisma migrations to reflect schema changes.  &#10;  - Created unique index on `AnalyticsUrl.urlId` for efficient lookups." />
     <MESSAGE value="Add `orderBy` clause to sort user URLs by creation date in descending order" />
@@ -529,6 +540,7 @@
     <MESSAGE value="Refactor schema validation in `actions.ts` to use schema's `safeParse` method directly and remove unused `z` imports" />
     <MESSAGE value="Remove `JwtGuard` usage from `UrlApiController` and `AnalyticsApiController` endpoints to simplify authentication handling." />
     <MESSAGE value="Add `helmet` for enhanced security and implement request throttling with `ThrottlerGuard`&#10;&#10;- **Backend**:&#10;  - Integrated `helmet` middleware to improve HTTP headers-based security.&#10;  - Configured global request throttling with `ThrottlerModule` and `ThrottlerGuard` to limit requests per minute.&#10;  - Updated dependencies in `package.json` and `package-lock.json` with `@nestjs/throttler` and `helmet`." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add `helmet` for enhanced security and implement request throttling with `ThrottlerGuard`&#10;&#10;- **Backend**:&#10;  - Integrated `helmet` middleware to improve HTTP headers-based security.&#10;  - Configured global request throttling with `ThrottlerModule` and `ThrottlerGuard` to limit requests per minute.&#10;  - Updated dependencies in `package.json` and `package-lock.json` with `@nestjs/throttler` and `helmet`." />
+    <MESSAGE value="Update `.idea/workspace.xml` with task details for recent backend security updates and throttling implementation." />
+    <option name="LAST_COMMIT_MESSAGE" value="Update `.idea/workspace.xml` with task details for recent backend security updates and throttling implementation." />
   </component>
 </project>
